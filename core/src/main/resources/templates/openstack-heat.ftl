@@ -105,13 +105,13 @@ ${core_user_data}
       volume_id: { get_resource: ambari_volume_${instance_id}_${volume_index} }
   </#list>
 
-  ambari_server_floatingip_${instance_id}:
-    type: OS::Neutron::FloatingIP
-    properties:
-      floating_network_id: { get_param: public_net_id }
-      port_id: { get_resource: ambari_app_port_${instance_id} }
-  
-  </#list>     
+  </#list>
+
+  ambari_floating_cbgateway_0:
+      type: OS::Neutron::FloatingIP
+      properties:
+        floating_network_id: { get_param: public_net_id }
+        port_id: { get_resource: ambari_app_port_cbgateway_0 }
 
   server_security_group:
     type: OS::Neutron::SecurityGroup
