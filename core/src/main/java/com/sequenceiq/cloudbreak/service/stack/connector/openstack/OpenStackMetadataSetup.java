@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
 
 import org.openstack4j.api.OSClient;
 import org.openstack4j.model.compute.Address;
@@ -29,6 +30,10 @@ public class OpenStackMetadataSetup implements MetadataSetup {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OpenStackMetadataSetup.class);
 
+    private static final long FLOATING_WAIT_TIME = 10000;
+
+    private static final int FLOATING_WAIT_CNTR = 50;
+
     @Autowired
     private OpenStackUtil openStackUtil;
 
@@ -45,7 +50,26 @@ public class OpenStackMetadataSetup implements MetadataSetup {
             Server server = osClient.compute().servers().get(instanceUUID);
             Map<String, String> metadata = server.getMetadata();
             String instanceGroupName = metadata.get(HeatTemplateBuilder.CB_INSTANCE_GROUP_NAME);
-            instancesCoreMetadata.add(createCoreMetaData(stack, server, instanceGroupName, openStackUtil.getInstanceId(instanceUUID, metadata)));
+            CoreInstanceMetaData md = createCoreMetaData(stack, server, instanceGroupName, openStackUtil.getInstanceId(instanceUUID, metadata));
+            if ("cbgateway".equals(instanceGroupName)) {
+                CountDownLatch latch = new CountDownLatch(FLOATING_WAIT_CNTR);
+                while (md.getPublicIp() == null) {
+                    try {
+                        Thread.sleep(FLOATING_WAIT_TIME);
+                    } catch (InterruptedException e) {
+                        LOGGER.error("Polling interrupted ", e);
+                    }
+                    server = osClient.compute().servers().get(instanceUUID);
+                    LOGGER.info("Metadata setup retry {}, {} ", latch.getCount(), server);
+                    metadata = server.getMetadata();
+                    instanceGroupName = metadata.get(HeatTemplateBuilder.CB_INSTANCE_GROUP_NAME);
+                    md = createCoreMetaData(stack, server, instanceGroupName, openStackUtil.getInstanceId(instanceUUID, metadata));
+                    if (latch.getCount() == 0) {
+                        throw new RuntimeException("Floating IP not forund for instance: " + instanceUUID);
+                    }
+                }
+            }
+            instancesCoreMetadata.add(md);
         }
         return instancesCoreMetadata;
     }
