@@ -8,13 +8,15 @@ public abstract class AbstractPollingService implements PollingService<PollingIn
 
     @Override
     public PollingInfo doPoll(PollingInfo persistedPollingInfo) {
+        //todo check the max number of polling cycles / timeout ?
         PollingInfo freshPollingInfo = null;
         LOGGER.debug("Polling invoked with persisted polling info: {}", persistedPollingInfo);
 
-        if (isActive(persistedPollingInfo)) {
-            LOGGER.debug("The persisted polling info is active: {}", persistedPollingInfo);
+        if (isTransient(persistedPollingInfo)) {
+            LOGGER.debug("The persisted polling info is in transient state: {}", persistedPollingInfo);
+
             freshPollingInfo = fetchCloudPollingInfo(persistedPollingInfo);
-            LOGGER.debug("The fresh polling info: {}", freshPollingInfo);
+            LOGGER.debug("Retrieved fresh resource status info: {}", freshPollingInfo);
 
             if (isSuccess(freshPollingInfo)) {
                 LOGGER.debug("Polling success; fresh polling info: {}", freshPollingInfo);
@@ -25,13 +27,13 @@ public abstract class AbstractPollingService implements PollingService<PollingIn
             }
         } else {
             LOGGER.debug("The persisted polling info is not active: {}", persistedPollingInfo);
-            return handleInactivePolling(persistedPollingInfo);
+            return handlePermanentPollingInfo(persistedPollingInfo);
         }
     }
 
     protected abstract boolean isSuccess(PollingInfo freshPollingInfo);
 
-    protected abstract boolean isActive(PollingInfo persistedPollingInfo);
+    protected abstract boolean isTransient(PollingInfo persistedPollingInfo);
 
     protected abstract PollingInfo fetchCloudPollingInfo(PollingInfo pollingInfo);
 

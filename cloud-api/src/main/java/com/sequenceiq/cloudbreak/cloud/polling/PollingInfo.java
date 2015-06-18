@@ -1,20 +1,23 @@
 package com.sequenceiq.cloudbreak.cloud.polling;
 
+import com.sequenceiq.cloudbreak.cloud.event.context.AuthenticatedContext;
+import com.sequenceiq.cloudbreak.cloud.model.ResourceStatus;
+
 /**
  * Marker for specific polling notification objects.
  */
 public interface PollingInfo {
-    enum PollingStatus {
-        NEW, ACTIVE, SUCCESS, TERMINATED, FAILED
-    }
 
     PollingReference pollingReference();
 
-    PollingStatus pollingStatus();
+    //todo naming!
+    ResourceStatus pollingStatus();
 
-    void setPollingStatus(PollingStatus pollingStatus);
+    void setPollingStatus(ResourceStatus pollingStatus);
 
-    void increasePollingCount();
+    void increasePollingCycle();
 
-    int pollingCount();
+    int pollingCycle();
+
+    AuthenticatedContext authenticatedContext();
 }

@@ -10,21 +10,22 @@ import com.sequenceiq.cloudbreak.cloud.notification.model.ResourceAllocationNoti
 import com.sequenceiq.cloudbreak.cloud.notification.model.ResourceAllocationPersisted;
 import com.sequenceiq.cloudbreak.cloud.service.Persister;
 
-import reactor.bus.Event;
-import reactor.fn.Consumer;
-
 @Component
-public class ResourcePersistenceHandler implements Consumer<Event<ResourceAllocationNotification>> {
+public class ResourcePersistenceHandler extends DispatchingEventHandler<ResourceAllocationNotification> {
     private static final Logger LOGGER = LoggerFactory.getLogger(ResourcePersistenceHandler.class);
 
     @Inject
     private Persister<ResourceAllocationNotification> cloudResourcePersisterService;
 
     @Override
-    public void accept(Event<ResourceAllocationNotification> resourceAllocationNotificationEvent) {
-        LOGGER.info("ResourceAllocationNotification received: {}", resourceAllocationNotificationEvent);
-        ResourceAllocationNotification notification = resourceAllocationNotificationEvent.getData();
-        notification = cloudResourcePersisterService.persist(notification);
-        notification.getPromise().onNext(new ResourceAllocationPersisted(notification));
+    protected ReactorStateContext process(ResourceAllocationNotification payload) {
+        LOGGER.info("ResourceAllocationNotification received: {}", payload);
+        payload = cloudResourcePersisterService.persist(payload);
+        return ReactorStateContextFactory.createReactorStateContext(getClass(), new ResourceAllocationPersisted(payload));
+    }
+
+    @Override
+    public Class<ResourceAllocationNotification> type() {
+        return ResourceAllocationNotification.class;
     }
 }

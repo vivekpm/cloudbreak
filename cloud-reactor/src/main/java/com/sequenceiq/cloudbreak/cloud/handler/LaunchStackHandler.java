@@ -2,6 +2,7 @@ package com.sequenceiq.cloudbreak.cloud.handler;
 
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -14,18 +15,23 @@ import com.sequenceiq.cloudbreak.cloud.event.context.AuthenticatedContext;
 import com.sequenceiq.cloudbreak.cloud.event.resource.LaunchStackRequest;
 import com.sequenceiq.cloudbreak.cloud.event.resource.LaunchStackResult;
 import com.sequenceiq.cloudbreak.cloud.init.CloudPlatformConnectors;
-import com.sequenceiq.cloudbreak.cloud.model.CloudResource;
 import com.sequenceiq.cloudbreak.cloud.model.CloudResourceStatus;
 import com.sequenceiq.cloudbreak.cloud.model.ResourceStatus;
-import com.sequenceiq.cloudbreak.cloud.notification.ResourcePersistenceNotifier;
+import com.sequenceiq.cloudbreak.cloud.notification.PersistenceNotifier;
+import com.sequenceiq.cloudbreak.cloud.notification.StateDispatcherNotifier;
+import com.sequenceiq.cloudbreak.cloud.polling.PollingInfo;
+import com.sequenceiq.cloudbreak.cloud.polling.PollingInfoFactory;
+import com.sequenceiq.cloudbreak.cloud.polling.ResourcePollingInfo;
 import com.sequenceiq.cloudbreak.cloud.scheduler.SyncPollingScheduler;
-import com.sequenceiq.cloudbreak.cloud.task.PollTask;
 import com.sequenceiq.cloudbreak.cloud.task.PollTaskFactory;
 import com.sequenceiq.cloudbreak.cloud.task.ResourcesStatePollerResult;
 import com.sequenceiq.cloudbreak.cloud.transform.ResourceLists;
 import com.sequenceiq.cloudbreak.cloud.transform.ResourcesStatePollerResults;
+import com.sequenceiq.cloudbreak.cloud.transform.LaunchStackResults;
 
 import reactor.bus.Event;
+import reactor.rx.Promise;
+import reactor.rx.Promises;
 
 @Component
 public class LaunchStackHandler implements CloudPlatformEventHandler<LaunchStackRequest> {
@@ -45,7 +51,10 @@ public class LaunchStackHandler implements CloudPlatformEventHandler<LaunchStack
     private PollTaskFactory statusCheckFactory;
 
     @Inject
-    private ResourcePersistenceNotifier resourcePersistenceNotifier;
+    private PersistenceNotifier resourcePersistenceNotifier;
+
+    @Inject
+    private StateDispatcherNotifier stateDispatcherNotifier;
 
     @Override
     public Class<LaunchStackRequest> type() {
@@ -61,18 +70,20 @@ public class LaunchStackHandler implements CloudPlatformEventHandler<LaunchStack
             CloudConnector connector = cloudPlatformConnectors.get(platform);
             AuthenticatedContext ac = connector.authenticate(launchStackRequest.getCloudContext(), launchStackRequest.getCloudCredential());
 
+            LOGGER.debug("Launching cloud stack. Request: {}", launchStackRequest);
             List<CloudResourceStatus> resourceStatus = connector.resources().launch(ac, launchStackRequest.getCloudStack(),
                     resourcePersistenceNotifier);
 
-            List<CloudResource> resources = ResourceLists.transform(resourceStatus);
+            Promise pollingPromise = Promises.prepare();
 
-            PollTask<ResourcesStatePollerResult> task = statusCheckFactory.newPollResourcesStateTask(ac, resources);
-            ResourcesStatePollerResult statePollerResult = ResourcesStatePollerResults.build(launchStackRequest.getCloudContext(), resourceStatus);
-            if (!task.completed(statePollerResult)) {
-                statePollerResult = syncPollingScheduler.schedule(task, INTERVAL, MAX_ATTEMPT);
-            }
+            LOGGER.debug("Triggering resourse status polling for resources: {}", resourceStatus);
+            stateDispatcherNotifier.startPolling(PollingInfoFactory.createPromiseAwarePollingInfo(connector, ac, resourceStatus, pollingPromise));
 
-            launchStackRequest.getResult().onNext(ResourcesStatePollerResults.transformToLaunchStackResult(statePollerResult));
+            PollingInfo pollingResult = (PollingInfo) pollingPromise.await(1, TimeUnit.HOURS);
+
+            LOGGER.debug("Resource polling terminated: {}", pollingResult);
+            launchStackRequest.getResult().onNext(LaunchStackResults.build(launchStackRequest.getCloudContext(),
+                    ((ResourcePollingInfo) pollingResult).getCloudResourceStatus()));
 
         } catch (Exception e) {
             LOGGER.error("Failed to handle LaunchStackRequest. Error: ", e);

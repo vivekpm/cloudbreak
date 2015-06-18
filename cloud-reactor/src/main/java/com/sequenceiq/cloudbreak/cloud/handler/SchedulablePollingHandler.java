@@ -3,7 +3,7 @@ package com.sequenceiq.cloudbreak.cloud.handler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sequenceiq.cloudbreak.cloud.notification.PollingNotifier;
+import com.sequenceiq.cloudbreak.cloud.notification.StateDispatcherNotifier;
 import com.sequenceiq.cloudbreak.cloud.polling.PollingInfo;
 
 import reactor.fn.Consumer;
@@ -16,16 +16,15 @@ public class SchedulablePollingHandler implements Consumer<Long> {
     private static final Logger LOGGER = LoggerFactory.getLogger(SchedulablePollingHandler.class);
 
     private PollingInfo pollingInfo;
-    private PollingNotifier pollingNotifier;
+    private StateDispatcherNotifier stateDispatcherNotifier;
 
-    public SchedulablePollingHandler(PollingInfo pollingInfo, PollingNotifier pollingNotifier) {
+    public SchedulablePollingHandler(PollingInfo pollingInfo, StateDispatcherNotifier stateDispatcherNotifier) {
         this.pollingInfo = pollingInfo;
-        this.pollingNotifier = pollingNotifier;
+        this.stateDispatcherNotifier = stateDispatcherNotifier;
     }
 
     @Override
     public void accept(Long id) {
-        LOGGER.debug("Start polling: {}", pollingInfo);
-        pollingNotifier.notifyPolling(PollingNotificationFactory.createPollingNotification(pollingInfo));
+        stateDispatcherNotifier.triggerPolling(NotificationFactory.createPollingNotification(pollingInfo));
     }
 }

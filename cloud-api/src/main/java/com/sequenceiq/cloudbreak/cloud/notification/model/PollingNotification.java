@@ -1,12 +1,34 @@
 package com.sequenceiq.cloudbreak.cloud.notification.model;
 
-/**
- * Implementers are subject of event-based polling.
- *
- * @param <T> the type of the payload of the notification
- */
-public interface PollingNotification<T> {
-    T pollingInfo();
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-    void operationCompleted(T pollingInfo);
+import com.sequenceiq.cloudbreak.cloud.notification.CloudbreakNotification;
+import com.sequenceiq.cloudbreak.cloud.polling.PollingInfo;
+
+public class PollingNotification implements CloudbreakNotification<PollingInfo> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PollingNotification.class);
+
+    private PollingInfo pollingInfo;
+
+    public PollingNotification(PollingInfo pollingInfo) {
+        this.pollingInfo = pollingInfo;
+    }
+
+    @Override
+    public PollingInfo payload() {
+        return pollingInfo;
+    }
+
+    //BEGIN GENERATED CODE
+
+    @Override
+    public String toString() {
+        return "PollingNotification{" +
+                "pollingInfo=" + pollingInfo +
+                '}';
+    }
+
+    //END GENERATED CODE
+
 }

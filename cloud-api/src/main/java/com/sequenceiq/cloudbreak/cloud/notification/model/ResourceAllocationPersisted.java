@@ -1,5 +1,6 @@
 package com.sequenceiq.cloudbreak.cloud.notification.model;
 
+// todo is this needed?
 public class ResourceAllocationPersisted {
 
     private ResourceAllocationNotification request;

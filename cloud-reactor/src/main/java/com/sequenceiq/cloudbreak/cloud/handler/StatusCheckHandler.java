@@ -16,7 +16,7 @@ import com.sequenceiq.cloudbreak.cloud.task.PollTaskFactory;
 import reactor.bus.Event;
 
 @Component
-public class StatusCheckHandler implements CloudPlatformEventHandler<StatusCheckRequest> {
+public class StatusCheckHandler extends DispatchingEventHandler<StatusCheckRequest> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StatusCheckHandler.class);
 
@@ -34,9 +34,13 @@ public class StatusCheckHandler implements CloudPlatformEventHandler<StatusCheck
         return StatusCheckRequest.class;
     }
 
+    @Override
+    public ReactorStateContext process(StatusCheckRequest payload) {
+        throw new UnsupportedOperationException("Not yet implemented!");
+    }
 
     @Override
     public void accept(Event<StatusCheckRequest> statusCheckRequestEvent) {
-
+        throw new UnsupportedOperationException("Not yet implemented!");
     }
 }
