@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.sequenceiq.cloudbreak.cloud.handler.PollingHandlerFactory;
 import com.sequenceiq.cloudbreak.cloud.notification.model.DefaultPollingNotification;
+import com.sequenceiq.cloudbreak.cloud.notification.model.PollingNotification;
 import com.sequenceiq.cloudbreak.cloud.notification.model.PollingResultNotification;
 import com.sequenceiq.cloudbreak.cloud.polling.PollingInfo;
 
@@ -28,14 +29,16 @@ public class PollingNotifier extends EventBusAwareNotifier<DefaultPollingNotific
     @Inject
     private Timer timer;
 
-    public void notifyPolling(DefaultPollingNotification data) {
-        LOGGER.debug("Sending polling notification: {}", data);
-        getEventBus().notify("polling-notification", Event.wrap(data));
+    public void notifyPolling(PollingInfo pollingInfo) {
+        LOGGER.debug("Sending polling notification: {}", pollingInfo);
+        PollingNotification notification = PollingNotificationFactory.createPollingNotification(pollingInfo);
+        getEventBus().notify("polling-notification", Event.wrap(notification));
     }
 
-    public void pollingCycleDone(PollingResultNotification data) {
+    public void pollingCycleDone(PollingInfo data) {
         LOGGER.debug("Sending polling cycle done notification: {}", data);
-        getEventBus().notify("polling-cycle-done", Event.wrap(data));
+        PollingResultNotification pollingResultNotification = (PollingResultNotification) PollingNotificationFactory.createPollingResultNotification(data);
+        getEventBus().notify("polling-cycle-done", Event.wrap(pollingResultNotification));
     }
 
     public Pausable scheduleNewPollingCycle(PollingInfo pollingInfo) {
@@ -46,7 +49,7 @@ public class PollingNotifier extends EventBusAwareNotifier<DefaultPollingNotific
     }
 
     public Pausable startPolling(PollingInfo pollingInfo) {
-        LOGGER.debug("Scheduling new  polling cycle: {}", pollingInfo);
+        LOGGER.debug("Starting to poll: {}", pollingInfo);
         Pausable pausable = timer.submit(PollingHandlerFactory.createStartPollingHandler(pollingInfo, this));
         LOGGER.debug("Polling started. Pausable reference: {}", pausable);
         return pausable;

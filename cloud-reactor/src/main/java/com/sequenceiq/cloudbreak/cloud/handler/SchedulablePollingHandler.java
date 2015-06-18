@@ -26,6 +26,6 @@ public class SchedulablePollingHandler implements Consumer<Long> {
     @Override
     public void accept(Long id) {
         LOGGER.debug("Start polling: {}", pollingInfo);
-        pollingNotifier.notifyPolling(PollingNotificationFactory.createPollingNotification(pollingInfo));
+        pollingNotifier.notifyPolling(pollingInfo);
     }
 }

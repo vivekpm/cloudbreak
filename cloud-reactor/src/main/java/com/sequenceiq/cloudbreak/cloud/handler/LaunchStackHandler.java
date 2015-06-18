@@ -17,11 +17,12 @@ import com.sequenceiq.cloudbreak.cloud.init.CloudPlatformConnectors;
 import com.sequenceiq.cloudbreak.cloud.model.CloudResource;
 import com.sequenceiq.cloudbreak.cloud.model.CloudResourceStatus;
 import com.sequenceiq.cloudbreak.cloud.model.ResourceStatus;
+import com.sequenceiq.cloudbreak.cloud.notification.PollingNotifier;
 import com.sequenceiq.cloudbreak.cloud.notification.ResourcePersistenceNotifier;
+import com.sequenceiq.cloudbreak.cloud.polling.PollingInfoFactory;
+import com.sequenceiq.cloudbreak.cloud.polling.ResourcePollingInfo;
 import com.sequenceiq.cloudbreak.cloud.scheduler.SyncPollingScheduler;
-import com.sequenceiq.cloudbreak.cloud.task.PollTask;
 import com.sequenceiq.cloudbreak.cloud.task.PollTaskFactory;
-import com.sequenceiq.cloudbreak.cloud.transform.LaunchStackResults;
 import com.sequenceiq.cloudbreak.cloud.transform.ResourceLists;
 
 import reactor.bus.Event;
@@ -46,6 +47,9 @@ public class LaunchStackHandler implements CloudPlatformEventHandler<LaunchStack
     @Inject
     private ResourcePersistenceNotifier resourcePersistenceNotifier;
 
+    @Inject
+    private PollingNotifier pollingNotifier;
+
     @Override
     public Class<LaunchStackRequest> type() {
         return LaunchStackRequest.class;
@@ -65,13 +69,17 @@ public class LaunchStackHandler implements CloudPlatformEventHandler<LaunchStack
 
             List<CloudResource> resources = ResourceLists.transform(resourceStatus);
 
-            PollTask<LaunchStackResult> task = statusCheckFactory.newPollResourcesStateTask(ac, resources);
-            LaunchStackResult launchStackResult = LaunchStackResults.build(launchStackRequest.getStackContext(), resourceStatus);
-            if (!task.completed(launchStackResult)) {
-                launchStackResult = syncPollingScheduler.schedule(task, INTERVAL, MAX_ATTEMPT);
-            }
+            ResourcePollingInfo resourcePollingInfo = PollingInfoFactory.createResourcePollingInfo(connector, ac, resources);
+            pollingNotifier.startPolling(resourcePollingInfo);
 
-            launchStackRequest.getResult().onNext(launchStackResult);
+
+//            PollTask<LaunchStackResult> task = statusCheckFactory.newPollResourcesStateTask(ac, resources);
+//            LaunchStackResult launchStackResult = LaunchStackResults.build(launchStackRequest.getStackContext(), resourceStatus);
+//            if (!task.completed(launchStackResult)) {
+//                launchStackResult = syncPollingScheduler.schedule(task, INTERVAL, MAX_ATTEMPT);
+//            }
+//
+//            launchStackRequest.getResult().onNext(launchStackResult);
 
         } catch (Exception e) {
             LOGGER.error("Failed to handle LaunchStackRequest. Error: ", e);

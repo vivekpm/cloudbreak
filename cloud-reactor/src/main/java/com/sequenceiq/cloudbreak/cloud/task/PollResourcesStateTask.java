@@ -34,7 +34,6 @@ public class PollResourcesStateTask implements PollTask<LaunchStackResult> {
         List<CloudResourceStatus> results = connector.resources().check(authenticatedContext, cloudResource);
         CloudResourceStatus status = ResourceStatusLists.aggregate(results);
         return new LaunchStackResult(authenticatedContext.getStackContext(), status.getStatus(), status.getStatusReason(), results);
-
     }
 
     @Override

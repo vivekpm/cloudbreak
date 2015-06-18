@@ -1,15 +1,38 @@
 package com.sequenceiq.cloudbreak.cloud.notification.model;
 
-import com.sequenceiq.cloudbreak.cloud.polling.PollingInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class ResourcePollingNotification implements PollingNotification<PollingInfo> {
-    @Override
-    public PollingInfo pollingInfo() {
-        return null;
+import com.sequenceiq.cloudbreak.cloud.polling.ResourcePollingInfo;
+
+public class ResourcePollingNotification implements PollingNotification<ResourcePollingInfo> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ResourcePollingNotification.class);
+
+    private ResourcePollingInfo resourcePollingInfo;
+
+    public ResourcePollingNotification(ResourcePollingInfo resourcePollingInfo) {
+        this.resourcePollingInfo = resourcePollingInfo;
     }
 
     @Override
-    public void operationCompleted(PollingInfo pollingInfo) {
-
+    public ResourcePollingInfo pollingInfo() {
+        return resourcePollingInfo;
     }
+
+    @Override
+    public void operationCompleted(ResourcePollingInfo pollingInfo) {
+        LOGGER.debug("TBD / operation completed: {}", pollingInfo);
+    }
+
+    //BEGIN GENERATED CODE
+
+    @Override
+    public String toString() {
+        return "ResourcePollingNotification{" +
+                "resourcePollingInfo=" + resourcePollingInfo +
+                '}';
+    }
+
+    //END GENERATED CODE
+
 }

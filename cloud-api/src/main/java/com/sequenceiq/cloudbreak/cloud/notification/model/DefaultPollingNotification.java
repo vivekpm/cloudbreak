@@ -23,4 +23,16 @@ public class DefaultPollingNotification implements PollingNotification<PollingIn
     public void operationCompleted(PollingInfo pollingInfo) {
         LOGGER.debug("TODO: Polling operation completed: {}", pollingInfo);
     }
+
+    //BEGIN GENERATED CODE
+
+    @Override
+    public String toString() {
+        return "DefaultPollingNotification{" +
+                "dummyPollingInfo=" + dummyPollingInfo +
+                '}';
+    }
+
+    //END GENERATED CODE
+
 }

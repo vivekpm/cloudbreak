@@ -26,10 +26,10 @@ public class PollingResultDispatcherHandler implements CloudPlatformEventHandler
         LOGGER.debug("Dispatch polling result: {}", notification.pollingInfo());
         switch (notification.pollingInfo().pollingStatus()) {
             case TERMINATED:
-                LOGGER.debug("Polling is terminated.");
+                LOGGER.debug("Polling is terminated by another process!");
                 throw new IllegalStateException("Unimplemented case!");
                 // TODO don't forget the break;!!!
-            case ACTIVE:
+            case IN_PROGRESS:
                 LOGGER.debug("Polling is active.");
                 pollingNotifier.scheduleNewPollingCycle(notification.pollingInfo());
                 break;
@@ -38,7 +38,7 @@ public class PollingResultDispatcherHandler implements CloudPlatformEventHandler
                 LOGGER.debug("Polling is failed.");
                 throw new IllegalStateException("Unimplemented case!");
                 // TODO don't forget the break;!!!
-            case SUCCESS:
+            case CREATED:
                 LOGGER.debug("Polling success");
                 throw new IllegalStateException("Unimplemented case!");
                 // TODO don't forget the break;!!!

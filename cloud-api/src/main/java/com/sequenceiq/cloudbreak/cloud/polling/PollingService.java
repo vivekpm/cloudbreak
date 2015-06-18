@@ -8,6 +8,6 @@ public interface PollingService<T> {
 
     T handleFailure(T freshPollingInfo);
 
-    T handleInactivePolling(T pollingInfo);
+    T handlePermanentPollingInfo(T pollingInfo);
 
 }
