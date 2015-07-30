@@ -1,5 +1,8 @@
 package com.sequenceiq.cloudbreak.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +13,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import com.sequenceiq.cloudbreak.common.type.CloudPlatform;
 
@@ -55,7 +61,7 @@ import com.sequenceiq.cloudbreak.common.type.CloudPlatform;
                         + "WHERE c.owner= :owner and c.name= :name"
                         + " AND c.archived IS FALSE")
 })
-
+@TypeDef(name = "jsonb", typeClass = JSONBUserType.class)
 public abstract class Credential {
 
     @Id
@@ -81,6 +87,13 @@ public abstract class Credential {
 
     @Column(columnDefinition = "boolean default false")
     private boolean archived;
+
+    @Column(nullable = false)
+    private String cloudPlatform;
+
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private Map<String, String> data = new HashMap<>();
 
     public Credential() {
 
@@ -166,5 +179,21 @@ public abstract class Credential {
 
     public String getLoginPassword() {
         return publicKey.replaceAll("Basic:", "").trim();
+    }
+
+    public String getCloudPlatform() {
+        return cloudPlatform;
+    }
+
+    public void setCloudPlatform(String cloudPlatform) {
+        this.cloudPlatform = cloudPlatform;
+    }
+
+    public Map<String, String> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, String> data) {
+        this.data = data;
     }
 }

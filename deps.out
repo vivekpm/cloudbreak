@@ -1,0 +1,2483 @@
+Inferred project: cloudbreak, version: 1.1.0-fb.0.uncommitted+906daa4
+:core:dependencies
+
+------------------------------------------------------------
+Project :core
+------------------------------------------------------------
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+checkstyle - The Checkstyle libraries to be used for this project.
++--- com.puppycrawl.tools:checkstyle:5.7
+|    +--- antlr:antlr:2.7.7
+|    +--- commons-beanutils:commons-beanutils-core:1.8.3
+|    \--- commons-cli:commons-cli:1.2
+\--- com.google.guava:guava:16.0.1
+
+compile - Compile classpath for source set 'main'.
++--- com.sequenceiq:ambari-client21:2.1.9
+|    +--- org.codehaus.groovy:groovy-all:2.1.8
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51
+|    |    \--- org.bouncycastle:bcprov-jdk15on:1.51
+|    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4
+|    |    +--- org.apache.httpcomponents:httpcore:4.3.2
+|    |    +--- commons-logging:commons-logging:1.1.3
+|    |    \--- commons-codec:commons-codec:1.6 -> 1.9
+|    +--- commons-io:commons-io:2.4
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1
+|         +--- org.apache.httpcomponents:httpclient:4.2.1 -> 4.3.4 (*)
+|         +--- net.sf.json-lib:json-lib:2.3
+|         |    +--- commons-beanutils:commons-beanutils:1.8.0
+|         |    |    \--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    +--- commons-collections:commons-collections:3.2.1
+|         |    +--- commons-lang:commons-lang:2.4
+|         |    +--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    \--- net.sf.ezmorph:ezmorph:1.0.6
+|         |         \--- commons-lang:commons-lang:2.3 -> 2.4
+|         +--- net.sourceforge.nekohtml:nekohtml:1.9.16
+|         |    \--- xerces:xercesImpl:2.9.1
+|         |         \--- xml-apis:xml-apis:1.3.04
+|         \--- xml-resolver:xml-resolver:1.2
++--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot:1.0.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE
+|    |    |    |    \--- commons-logging:commons-logging:1.1.3
+|    |    |    \--- org.springframework:spring-context:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-aop:4.0.3.RELEASE
+|    |    |         |    +--- aopalliance:aopalliance:1.0
+|    |    |         |    +--- org.springframework:spring-beans:4.0.3.RELEASE
+|    |    |         |    |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         \--- org.springframework:spring-expression:4.0.3.RELEASE
+|    |    |              \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.0.2.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-starter-logging:1.0.2.RELEASE
+|    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:jul-to-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:log4j-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    \--- ch.qos.logback:logback-classic:1.1.2
+|    |    |         +--- ch.qos.logback:logback-core:1.1.2
+|    |    |         \--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.yaml:snakeyaml:1.13
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:1.0.2.RELEASE
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:7.0.52
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.52
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    +--- org.springframework:spring-web:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-webmvc:4.0.3.RELEASE
+|         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-expression:4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-web:4.0.3.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-actuator:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-actuator:1.0.2.RELEASE
+|         +--- org.springframework.boot:spring-boot:1.0.2.RELEASE (*)
+|         +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE (*)
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2 (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-context:4.0.3.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-data-jpa:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-aop:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    \--- org.aspectj:aspectjweaver:1.7.4
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE
+|    |    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |    \--- org.springframework:spring-tx:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |         \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.apache.tomcat:tomcat-jdbc:7.0.52
+|    |    |    \--- org.apache.tomcat:tomcat-juli:7.0.52
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.hibernate:hibernate-entitymanager:4.3.1.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    +--- org.hibernate:hibernate-core:4.3.1.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    |    \--- xml-apis:xml-apis:1.0.b2 -> 1.3.04
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final
+|    |    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    |    \--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    \--- org.jboss:jandex:1.1.0.Final
+|    |    +--- dom4j:dom4j:1.6.1 (*)
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final (*)
+|    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    \--- org.javassist:javassist:3.18.1-GA
+|    +--- org.springframework:spring-orm:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.springframework.data:spring-data-jpa:1.5.2.RELEASE
+|    |    +--- org.springframework.data:spring-data-commons:1.7.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-tx:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    \--- org.springframework:spring-aspects:4.0.3.RELEASE
+|         \--- org.aspectj:aspectjweaver:1.7.4
++--- org.springframework.boot:spring-boot-starter-websocket:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE (*)
+|    +--- org.springframework:spring-websocket:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.0.3.RELEASE (*)
+|    \--- org.apache.tomcat.embed:tomcat-embed-websocket:7.0.52
+|         \--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52
++--- org.springframework.security.oauth:spring-security-oauth2:2.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-config:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-web:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- commons-codec:commons-codec:1.6 -> 1.9
+|    \--- org.codehaus.jackson:jackson-mapper-asl:1.9.13
+|         \--- org.codehaus.jackson:jackson-core-asl:1.9.13
++--- org.springframework.security:spring-security-config:3.2.3.RELEASE (*)
++--- org.springframework.security:spring-security-web:3.2.3.RELEASE (*)
++--- org.springframework:spring-messaging:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
++--- org.springframework:spring-context-support:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
++--- io.projectreactor:reactor-core:2.0.3.RELEASE
+|    +--- org.reactivestreams:reactive-streams:1.0.0
+|    \--- org.slf4j:slf4j-api:1.7.11 -> 1.7.12
++--- io.projectreactor:reactor-bus:2.0.3.RELEASE
+|    +--- com.goldmansachs:gs-collections:5.1.0
+|    |    \--- com.goldmansachs:gs-collections-api:5.1.0
+|    \--- io.projectreactor:reactor-core:2.0.3.RELEASE (*)
++--- net.sf.ehcache:ehcache:2.8.3
+|    \--- org.slf4j:slf4j-api:1.6.6 -> 1.7.12
++--- org.postgresql:postgresql:9.3-1101-jdbc41
++--- org.hibernate:hibernate-validator:5.1.1.Final
+|    +--- javax.validation:validation-api:1.1.0.Final
+|    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    \--- com.fasterxml:classmate:1.0.0 -> 1.1.0
++--- org.apache.commons:commons-lang3:3.3.2
++--- com.sequenceiq:consul-api:1.10
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- commons-logging:commons-logging:1.1 -> 1.1.3
+|    +--- com.google.code.gson:gson:2.3
+|    \--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
++--- org.codehaus.jettison:jettison:1.3.5
+|    \--- stax:stax-api:1.0.1
++--- commons-io:commons-io:2.4
++--- commons-net:commons-net:3.3
++--- com.thoughtworks.xstream:xstream:1.4.7
+|    +--- xmlpull:xmlpull:1.1.3.1
+|    \--- xpp3:xpp3_min:1.1.4c
++--- com.github.fommil:openssh:1.0
+|    +--- commons-codec:commons-codec:1.9
+|    \--- com.google.guava:guava:16.0 -> 17.0
++--- javax.mail:mail:1.5.0-b01
+|    \--- javax.activation:activation:1.1
++--- org.freemarker:freemarker:2.3.20
++--- com.google.apis:google-api-services-compute:v1-rev46-1.19.1
+|    \--- com.google.api-client:google-api-client:1.19.1
+|         +--- com.google.oauth-client:google-oauth-client:1.19.0
+|         |    +--- com.google.http-client:google-http-client:1.19.0
+|         |    |    +--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         |    |    \--- org.apache.httpcomponents:httpclient:4.0.1 -> 4.3.4 (*)
+|         |    \--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         \--- com.google.http-client:google-http-client-jackson2:1.19.0
+|              +--- com.google.http-client:google-http-client:1.19.0 (*)
+|              \--- com.fasterxml.jackson.core:jackson-core:2.1.3 -> 2.4.2
++--- com.google.apis:google-api-services-storage:v1-rev6-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- com.google.apis:google-api-services-dns:v1beta1-rev9-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- org.pacesys:openstack4j:2.0.0
+|    +--- org.pacesys.openstack4j.connectors:openstack4j-jersey2:2.0.0
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.10.1
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.10.1 -> 2.11
+|    |    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    |    +--- javax.annotation:javax.annotation-api:1.2
+|    |    |    |    +--- org.glassfish.jersey.bundles.repackaged:jersey-guava:2.11
+|    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05
+|    |    |    |    |    +--- javax.inject:javax.inject:1
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05
+|    |    |    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    |    |    \--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2:hk2-locator:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05 (*)
+|    |    |    |    |    \--- org.javassist:javassist:3.18.1-GA
+|    |    |    |    \--- org.glassfish.hk2:osgi-resource-locator:1.0.1
+|    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    \--- org.glassfish.hk2:hk2-locator:2.3.0-b05 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.media:jersey-media-json-jackson:2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.2 -> 2.4.2
+|    |    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2
+|    |    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.3.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.3.2 -> 2.4.2
+|    |    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson.core:jackson-annotations:2.3.2 -> 2.4.2
+|    |    +--- org.pacesys:openstack4j-core:2.0.0
+|    |    |    +--- com.google.guava:guava:17.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    |    +--- com.google.guava:guava:17.0
+|    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    +--- com.google.guava:guava:17.0
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.0
++--- org.bouncycastle:bcprov-jdk15on:1.47 -> 1.51
++--- org.bouncycastle:bcpkix-jdk15on:1.47 -> 1.51 (*)
++--- org.jasypt:jasypt:1.9.2
++--- com.google.guava:guava:16.0.1 -> 17.0
++--- com.wordnik:swagger-core:1.5.2-M1
+|    +--- commons-lang:commons-lang:2.4
+|    +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    \--- joda-time:joda-time:2.2 -> 2.8.1
+|    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    \--- com.wordnik:swagger-models:1.5.2-M1
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|         +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|         \--- com.wordnik:swagger-annotations:1.5.2-M1
++--- com.mangofactory:swagger-springmvc:1.0.2
+|    +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|    +--- com.google.guava:guava:15.0 -> 17.0
+|    +--- com.fasterxml:classmate:1.1.0
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- joda-time:joda-time:2.5 -> 2.8.1
+|    +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|    \--- com.mangofactory:swagger-models:1.0.2
+|         +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|         +--- com.google.guava:guava:15.0 -> 17.0
+|         +--- com.fasterxml:classmate:1.1.0
+|         +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|         +--- joda-time:joda-time:2.5 -> 2.8.1
+|         +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
++--- com.google.http-client:google-http-client-jackson2:1.17.0-rc -> 1.19.0 (*)
++--- com.google.oauth-client:google-oauth-client-jetty:1.17.0-rc
+|    +--- com.google.oauth-client:google-oauth-client-java6:1.17.0-rc
+|    |    \--- com.google.oauth-client:google-oauth-client:1.17.0-rc -> 1.19.0 (*)
+|    \--- org.mortbay.jetty:jetty:6.1.26
+|         \--- org.mortbay.jetty:jetty-util:6.1.26
++--- com.sequenceiq:azure-rest-client:0.1.35
+|    +--- org.codehaus.groovy:groovy-all:2.1.8
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- org.codehaus.jettison:jettison:1.3.5 (*)
+|    +--- com.thoughtworks.xstream:xstream:1.4.7 (*)
+|    +--- de.odysseus.staxon:staxon-jackson:1.3
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.1 -> 2.4.2
+|    |    \--- de.odysseus.staxon:staxon:1.3
+|    +--- de.odysseus.staxon:staxon:1.3
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1 (*)
++--- com.amazonaws:aws-java-sdk:1.9.35
+|    +--- com.amazonaws:aws-java-sdk-support:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35
+|    |         +--- org.apache.httpcomponents:httpclient:4.3.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |         \--- joda-time:joda-time:[2.2,) -> 2.8.1
+|    +--- com.amazonaws:aws-java-sdk-simpledb:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-storagegateway:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-route53:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-s3:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-kms:1.9.35
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-importexport:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sts:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-rds:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-redshift:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-glacier:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-sns:1.9.35
+|    |    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-iam:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-datapipeline:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-emr:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticache:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elastictranscoder:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ec2:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sns:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudtrail:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-logs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitoidentity:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitosync:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directconnect:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudformation:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudfront:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kinesis:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-opsworks:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ses:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-autoscaling:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudsearch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-swf-libraries:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-codedeploy:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kms:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-config:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-lambda:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ecs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudhsm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ssm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-workspaces:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-machinelearning:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directory:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
++--- com.jcraft:jsch:0.1.52
++--- com.hierynomus:sshj:0.11.0
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- com.jcraft:jzlib:1.1.3
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    \--- org.bouncycastle:bcprov-jdk15on:1.51
++--- project :core-model
+|    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    \--- org.apache.commons:commons-lang3:3.3.2
+\--- project :orchestrator-api
+     +--- org.slf4j:slf4j-api:1.7.12
+     +--- org.mockito:mockito-all:1.10.19
+     \--- junit:junit:4.12
+          \--- org.hamcrest:hamcrest-core:1.3
+
+default - Configuration for default artifacts.
++--- com.sequenceiq:ambari-client21:2.1.9
+|    +--- org.codehaus.groovy:groovy-all:2.1.8
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51
+|    |    \--- org.bouncycastle:bcprov-jdk15on:1.51
+|    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4
+|    |    +--- org.apache.httpcomponents:httpcore:4.3.2
+|    |    +--- commons-logging:commons-logging:1.1.3
+|    |    \--- commons-codec:commons-codec:1.6 -> 1.9
+|    +--- commons-io:commons-io:2.4
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1
+|         +--- org.apache.httpcomponents:httpclient:4.2.1 -> 4.3.4 (*)
+|         +--- net.sf.json-lib:json-lib:2.3
+|         |    +--- commons-beanutils:commons-beanutils:1.8.0
+|         |    |    \--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    +--- commons-collections:commons-collections:3.2.1
+|         |    +--- commons-lang:commons-lang:2.4 -> 2.6
+|         |    +--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    \--- net.sf.ezmorph:ezmorph:1.0.6
+|         |         \--- commons-lang:commons-lang:2.3 -> 2.6
+|         +--- net.sourceforge.nekohtml:nekohtml:1.9.16
+|         |    \--- xerces:xercesImpl:2.9.1
+|         |         \--- xml-apis:xml-apis:1.3.04
+|         \--- xml-resolver:xml-resolver:1.2
++--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot:1.0.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE
+|    |    |    |    \--- commons-logging:commons-logging:1.1.3
+|    |    |    \--- org.springframework:spring-context:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-aop:4.0.3.RELEASE
+|    |    |         |    +--- aopalliance:aopalliance:1.0
+|    |    |         |    +--- org.springframework:spring-beans:4.0.3.RELEASE
+|    |    |         |    |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         \--- org.springframework:spring-expression:4.0.3.RELEASE
+|    |    |              \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.0.2.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-starter-logging:1.0.2.RELEASE
+|    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:jul-to-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:log4j-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    \--- ch.qos.logback:logback-classic:1.1.2
+|    |    |         +--- ch.qos.logback:logback-core:1.1.2
+|    |    |         \--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.yaml:snakeyaml:1.13
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:1.0.2.RELEASE
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:7.0.52
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.52
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    +--- org.springframework:spring-web:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-webmvc:4.0.3.RELEASE
+|         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-expression:4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-web:4.0.3.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-actuator:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-actuator:1.0.2.RELEASE
+|         +--- org.springframework.boot:spring-boot:1.0.2.RELEASE (*)
+|         +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE (*)
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2 (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-context:4.0.3.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-data-jpa:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-aop:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    \--- org.aspectj:aspectjweaver:1.7.4
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE
+|    |    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |    \--- org.springframework:spring-tx:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |         \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.apache.tomcat:tomcat-jdbc:7.0.52
+|    |    |    \--- org.apache.tomcat:tomcat-juli:7.0.52
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.hibernate:hibernate-entitymanager:4.3.1.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    +--- org.hibernate:hibernate-core:4.3.1.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    |    \--- xml-apis:xml-apis:1.0.b2 -> 1.3.04
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final
+|    |    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    |    \--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    \--- org.jboss:jandex:1.1.0.Final
+|    |    +--- dom4j:dom4j:1.6.1 (*)
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final (*)
+|    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    \--- org.javassist:javassist:3.18.1-GA
+|    +--- org.springframework:spring-orm:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.springframework.data:spring-data-jpa:1.5.2.RELEASE
+|    |    +--- org.springframework.data:spring-data-commons:1.7.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-tx:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    \--- org.springframework:spring-aspects:4.0.3.RELEASE
+|         \--- org.aspectj:aspectjweaver:1.7.4
++--- org.springframework.boot:spring-boot-starter-websocket:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE (*)
+|    +--- org.springframework:spring-websocket:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.0.3.RELEASE (*)
+|    \--- org.apache.tomcat.embed:tomcat-embed-websocket:7.0.52
+|         \--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52
++--- org.springframework.security.oauth:spring-security-oauth2:2.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-config:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-web:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- commons-codec:commons-codec:1.6 -> 1.9
+|    \--- org.codehaus.jackson:jackson-mapper-asl:1.9.13
+|         \--- org.codehaus.jackson:jackson-core-asl:1.9.13
++--- org.springframework.security:spring-security-config:3.2.3.RELEASE (*)
++--- org.springframework.security:spring-security-web:3.2.3.RELEASE (*)
++--- org.springframework:spring-messaging:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
++--- org.springframework:spring-context-support:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
++--- io.projectreactor:reactor-core:2.0.3.RELEASE
+|    +--- org.reactivestreams:reactive-streams:1.0.0
+|    \--- org.slf4j:slf4j-api:1.7.11 -> 1.7.12
++--- io.projectreactor:reactor-bus:2.0.3.RELEASE
+|    +--- com.goldmansachs:gs-collections:5.1.0
+|    |    \--- com.goldmansachs:gs-collections-api:5.1.0
+|    \--- io.projectreactor:reactor-core:2.0.3.RELEASE (*)
++--- net.sf.ehcache:ehcache:2.8.3
+|    \--- org.slf4j:slf4j-api:1.6.6 -> 1.7.12
++--- org.postgresql:postgresql:9.3-1101-jdbc41
++--- org.hibernate:hibernate-validator:5.1.1.Final
+|    +--- javax.validation:validation-api:1.1.0.Final
+|    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    \--- com.fasterxml:classmate:1.0.0 -> 1.1.0
++--- org.apache.commons:commons-lang3:3.3.2
++--- com.sequenceiq:consul-api:1.10
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- commons-logging:commons-logging:1.1 -> 1.1.3
+|    +--- com.google.code.gson:gson:2.3
+|    \--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
++--- org.codehaus.jettison:jettison:1.3.5
+|    \--- stax:stax-api:1.0.1
++--- commons-io:commons-io:2.4
++--- commons-net:commons-net:3.3
++--- com.thoughtworks.xstream:xstream:1.4.7
+|    +--- xmlpull:xmlpull:1.1.3.1
+|    \--- xpp3:xpp3_min:1.1.4c
++--- com.github.fommil:openssh:1.0
+|    +--- commons-codec:commons-codec:1.9
+|    \--- com.google.guava:guava:16.0 -> 18.0
++--- javax.mail:mail:1.5.0-b01
+|    \--- javax.activation:activation:1.1
++--- org.freemarker:freemarker:2.3.20
++--- com.google.apis:google-api-services-compute:v1-rev46-1.19.1
+|    \--- com.google.api-client:google-api-client:1.19.1
+|         +--- com.google.oauth-client:google-oauth-client:1.19.0
+|         |    +--- com.google.http-client:google-http-client:1.19.0
+|         |    |    +--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         |    |    \--- org.apache.httpcomponents:httpclient:4.0.1 -> 4.3.4 (*)
+|         |    \--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         \--- com.google.http-client:google-http-client-jackson2:1.19.0
+|              +--- com.google.http-client:google-http-client:1.19.0 (*)
+|              \--- com.fasterxml.jackson.core:jackson-core:2.1.3 -> 2.4.2
++--- com.google.apis:google-api-services-storage:v1-rev6-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- com.google.apis:google-api-services-dns:v1beta1-rev9-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- org.pacesys:openstack4j:2.0.0
+|    +--- org.pacesys.openstack4j.connectors:openstack4j-jersey2:2.0.0
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.10.1 -> 2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11
+|    |    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    |    +--- javax.annotation:javax.annotation-api:1.2
+|    |    |    |    +--- org.glassfish.jersey.bundles.repackaged:jersey-guava:2.11
+|    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05
+|    |    |    |    |    +--- javax.inject:javax.inject:1
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05
+|    |    |    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    |    |    \--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2:hk2-locator:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05 (*)
+|    |    |    |    |    \--- org.javassist:javassist:3.18.1-GA
+|    |    |    |    \--- org.glassfish.hk2:osgi-resource-locator:1.0.1
+|    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    \--- org.glassfish.hk2:hk2-locator:2.3.0-b05 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.media:jersey-media-json-jackson:2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.4.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.4.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson.core:jackson-annotations:2.3.2 -> 2.4.2
+|    |    +--- org.pacesys:openstack4j-core:2.0.0
+|    |    |    +--- com.google.guava:guava:17.0 -> 18.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    |    +--- com.google.guava:guava:17.0 -> 18.0
+|    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    +--- com.google.guava:guava:17.0 -> 18.0
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.0
++--- org.bouncycastle:bcprov-jdk15on:1.47 -> 1.51
++--- org.bouncycastle:bcpkix-jdk15on:1.47 -> 1.51 (*)
++--- org.jasypt:jasypt:1.9.2
++--- com.google.guava:guava:16.0.1 -> 18.0
++--- com.wordnik:swagger-core:1.5.2-M1
+|    +--- commons-lang:commons-lang:2.4 -> 2.6
+|    +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    \--- joda-time:joda-time:2.2 -> 2.8.1
+|    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    \--- com.wordnik:swagger-models:1.5.2-M1
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|         +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|         \--- com.wordnik:swagger-annotations:1.5.2-M1
++--- com.mangofactory:swagger-springmvc:1.0.2
+|    +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|    +--- com.google.guava:guava:15.0 -> 18.0
+|    +--- com.fasterxml:classmate:1.1.0
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- joda-time:joda-time:2.5 -> 2.8.1
+|    +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|    \--- com.mangofactory:swagger-models:1.0.2
+|         +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|         +--- com.google.guava:guava:15.0 -> 18.0
+|         +--- com.fasterxml:classmate:1.1.0
+|         +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|         +--- joda-time:joda-time:2.5 -> 2.8.1
+|         +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
++--- com.google.http-client:google-http-client-jackson2:1.17.0-rc -> 1.19.0 (*)
++--- com.google.oauth-client:google-oauth-client-jetty:1.17.0-rc
+|    +--- com.google.oauth-client:google-oauth-client-java6:1.17.0-rc
+|    |    \--- com.google.oauth-client:google-oauth-client:1.17.0-rc -> 1.19.0 (*)
+|    \--- org.mortbay.jetty:jetty:6.1.26
+|         \--- org.mortbay.jetty:jetty-util:6.1.26
++--- com.sequenceiq:azure-rest-client:0.1.35
+|    +--- org.codehaus.groovy:groovy-all:2.1.8
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- org.codehaus.jettison:jettison:1.3.5 (*)
+|    +--- com.thoughtworks.xstream:xstream:1.4.7 (*)
+|    +--- de.odysseus.staxon:staxon-jackson:1.3
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.1 -> 2.4.2
+|    |    \--- de.odysseus.staxon:staxon:1.3
+|    +--- de.odysseus.staxon:staxon:1.3
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1 (*)
++--- com.amazonaws:aws-java-sdk:1.9.35
+|    +--- com.amazonaws:aws-java-sdk-support:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35
+|    |         +--- org.apache.httpcomponents:httpclient:4.3.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |         \--- joda-time:joda-time:[2.2,) -> 2.8.1
+|    +--- com.amazonaws:aws-java-sdk-simpledb:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-storagegateway:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-route53:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-s3:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-kms:1.9.35
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-importexport:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sts:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-rds:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-redshift:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-glacier:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-sns:1.9.35
+|    |    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-iam:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-datapipeline:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-emr:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticache:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elastictranscoder:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ec2:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sns:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudtrail:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-logs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitoidentity:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitosync:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directconnect:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudformation:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudfront:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kinesis:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-opsworks:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ses:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-autoscaling:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudsearch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-swf-libraries:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-codedeploy:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kms:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-config:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-lambda:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ecs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudhsm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ssm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-workspaces:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-machinelearning:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directory:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
++--- com.jcraft:jsch:0.1.52
++--- com.hierynomus:sshj:0.11.0
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- com.jcraft:jzlib:1.1.3
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    \--- org.bouncycastle:bcprov-jdk15on:1.51
++--- project :core-model
+|    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    \--- org.apache.commons:commons-lang3:3.3.2
++--- project :orchestrator-api
+|    +--- org.slf4j:slf4j-api:1.7.12
+|    +--- org.mockito:mockito-all:1.10.19
+|    \--- junit:junit:4.12
+|         \--- org.hamcrest:hamcrest-core:1.3
++--- project :orchestrator-swarm
+|    +--- project :orchestrator-api (*)
+|    +--- com.github.docker-java:docker-java:1.3.0
+|    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.1.2 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.connectors:jersey-apache-connector:2.11
+|    |    |    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- org.glassfish.jersey.core:jersey-client:2.11 (*)
+|    |    |    \--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.11 (*)
+|    |    +--- de.gesellix:unix-socket-factory:2015-01-27T15-02-14
+|    |    |    \--- org.apache.httpcomponents:httpclient:4.3 -> 4.3.4 (*)
+|    |    +--- org.apache.commons:commons-compress:1.5
+|    |    |    \--- org.tukaani:xz:1.2
+|    |    +--- commons-codec:commons-codec:1.8 -> 1.9
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- commons-io:commons-io:2.3 -> 2.4
+|    |    +--- org.slf4j:slf4j-api:1.7.5 -> 1.7.12
+|    |    +--- com.google.guava:guava:18.0
+|    |    \--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    \--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.4.2 (*)
+\--- activation:activation:1.0.2
+     \--- javax.activation:activation:1.0.2 -> 1.1
+
+deployerJars
+Download https://repo1.maven.org/maven2/org/springframework/build/aws/org.springframework.build.aws.maven/3.0.0.RELEASE/org.springframework.build.aws.maven-3.0.0.RELEASE.pom
+Download https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.7.2/jets3t-0.7.2.pom
+\--- org.springframework.build.aws:org.springframework.build.aws.maven:3.0.0.RELEASE
+     +--- commons-httpclient:commons-httpclient:3.1
+     |    +--- commons-logging:commons-logging:1.0.4 -> 1.1.1
+     |    \--- commons-codec:commons-codec:1.2 -> 1.3
+     \--- net.java.dev.jets3t:jets3t:0.7.2
+          +--- commons-codec:commons-codec:1.3
+          +--- commons-logging:commons-logging:1.1.1
+          \--- commons-httpclient:commons-httpclient:3.1 (*)
+
+jacocoAgent - The Jacoco agent to use to get coverage data.
+\--- org.jacoco:org.jacoco.agent:0.7.1.201405082137
+
+jacocoAnt - The Jacoco ant tasks to use to get execute Gradle tasks.
+Download https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.7.1.201405082137/org.jacoco.ant-0.7.1.201405082137.pom
+Download https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.1.201405082137/org.jacoco.core-0.7.1.201405082137.pom
+Download https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.1.201405082137/org.jacoco.report-0.7.1.201405082137.pom
+Download https://repo1.maven.org/maven2/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.pom
+Download https://repo1.maven.org/maven2/org/ow2/asm/asm-parent/5.0.1/asm-parent-5.0.1.pom
+\--- org.jacoco:org.jacoco.ant:0.7.1.201405082137
+     +--- org.jacoco:org.jacoco.core:0.7.1.201405082137
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     +--- org.jacoco:org.jacoco.report:0.7.1.201405082137
+     |    +--- org.jacoco:org.jacoco.core:0.7.1.201405082137 (*)
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     \--- org.jacoco:org.jacoco.agent:0.7.1.201405082137
+
+runtime - Runtime classpath for source set 'main'.
++--- com.sequenceiq:ambari-client21:2.1.9
+|    +--- org.codehaus.groovy:groovy-all:2.1.8
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51
+|    |    \--- org.bouncycastle:bcprov-jdk15on:1.51
+|    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4
+|    |    +--- org.apache.httpcomponents:httpcore:4.3.2
+|    |    +--- commons-logging:commons-logging:1.1.3
+|    |    \--- commons-codec:commons-codec:1.6 -> 1.9
+|    +--- commons-io:commons-io:2.4
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1
+|         +--- org.apache.httpcomponents:httpclient:4.2.1 -> 4.3.4 (*)
+|         +--- net.sf.json-lib:json-lib:2.3
+|         |    +--- commons-beanutils:commons-beanutils:1.8.0
+|         |    |    \--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    +--- commons-collections:commons-collections:3.2.1
+|         |    +--- commons-lang:commons-lang:2.4 -> 2.6
+|         |    +--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    \--- net.sf.ezmorph:ezmorph:1.0.6
+|         |         \--- commons-lang:commons-lang:2.3 -> 2.6
+|         +--- net.sourceforge.nekohtml:nekohtml:1.9.16
+|         |    \--- xerces:xercesImpl:2.9.1
+|         |         \--- xml-apis:xml-apis:1.3.04
+|         \--- xml-resolver:xml-resolver:1.2
++--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot:1.0.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE
+|    |    |    |    \--- commons-logging:commons-logging:1.1.3
+|    |    |    \--- org.springframework:spring-context:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-aop:4.0.3.RELEASE
+|    |    |         |    +--- aopalliance:aopalliance:1.0
+|    |    |         |    +--- org.springframework:spring-beans:4.0.3.RELEASE
+|    |    |         |    |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |         \--- org.springframework:spring-expression:4.0.3.RELEASE
+|    |    |              \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.0.2.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-starter-logging:1.0.2.RELEASE
+|    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:jul-to-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:log4j-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    \--- ch.qos.logback:logback-classic:1.1.2
+|    |    |         +--- ch.qos.logback:logback-core:1.1.2
+|    |    |         \--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.yaml:snakeyaml:1.13
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:1.0.2.RELEASE
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:7.0.52
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.52
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    +--- org.springframework:spring-web:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-webmvc:4.0.3.RELEASE
+|         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|         +--- org.springframework:spring-expression:4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-web:4.0.3.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-actuator:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-actuator:1.0.2.RELEASE
+|         +--- org.springframework.boot:spring-boot:1.0.2.RELEASE (*)
+|         +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE (*)
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2 (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-context:4.0.3.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-data-jpa:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-aop:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    \--- org.aspectj:aspectjweaver:1.7.4
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE
+|    |    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    |    \--- org.springframework:spring-tx:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    |         \--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.apache.tomcat:tomcat-jdbc:7.0.52
+|    |    |    \--- org.apache.tomcat:tomcat-juli:7.0.52
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.hibernate:hibernate-entitymanager:4.3.1.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    +--- org.hibernate:hibernate-core:4.3.1.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    |    \--- xml-apis:xml-apis:1.0.b2 -> 1.3.04
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final
+|    |    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    |    \--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    \--- org.jboss:jandex:1.1.0.Final
+|    |    +--- dom4j:dom4j:1.6.1 (*)
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final (*)
+|    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    \--- org.javassist:javassist:3.18.1-GA
+|    +--- org.springframework:spring-orm:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.springframework.data:spring-data-jpa:1.5.2.RELEASE
+|    |    +--- org.springframework.data:spring-data-commons:1.7.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-tx:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    \--- org.springframework:spring-aspects:4.0.3.RELEASE
+|         \--- org.aspectj:aspectjweaver:1.7.4
++--- org.springframework.boot:spring-boot-starter-websocket:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE (*)
+|    +--- org.springframework:spring-websocket:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.0.3.RELEASE (*)
+|    \--- org.apache.tomcat.embed:tomcat-embed-websocket:7.0.52
+|         \--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52
++--- org.springframework.security.oauth:spring-security-oauth2:2.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-core:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-config:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-web:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- commons-codec:commons-codec:1.6 -> 1.9
+|    \--- org.codehaus.jackson:jackson-mapper-asl:1.9.13
+|         \--- org.codehaus.jackson:jackson-core-asl:1.9.13
++--- org.springframework.security:spring-security-config:3.2.3.RELEASE (*)
++--- org.springframework.security:spring-security-web:3.2.3.RELEASE (*)
++--- org.springframework:spring-messaging:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
++--- org.springframework:spring-context-support:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE (*)
++--- io.projectreactor:reactor-core:2.0.3.RELEASE
+|    +--- org.reactivestreams:reactive-streams:1.0.0
+|    \--- org.slf4j:slf4j-api:1.7.11 -> 1.7.12
++--- io.projectreactor:reactor-bus:2.0.3.RELEASE
+|    +--- com.goldmansachs:gs-collections:5.1.0
+|    |    \--- com.goldmansachs:gs-collections-api:5.1.0
+|    \--- io.projectreactor:reactor-core:2.0.3.RELEASE (*)
++--- net.sf.ehcache:ehcache:2.8.3
+|    \--- org.slf4j:slf4j-api:1.6.6 -> 1.7.12
++--- org.postgresql:postgresql:9.3-1101-jdbc41
++--- org.hibernate:hibernate-validator:5.1.1.Final
+|    +--- javax.validation:validation-api:1.1.0.Final
+|    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    \--- com.fasterxml:classmate:1.0.0 -> 1.1.0
++--- org.apache.commons:commons-lang3:3.3.2
++--- com.sequenceiq:consul-api:1.10
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- commons-logging:commons-logging:1.1 -> 1.1.3
+|    +--- com.google.code.gson:gson:2.3
+|    \--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
++--- org.codehaus.jettison:jettison:1.3.5
+|    \--- stax:stax-api:1.0.1
++--- commons-io:commons-io:2.4
++--- commons-net:commons-net:3.3
++--- com.thoughtworks.xstream:xstream:1.4.7
+|    +--- xmlpull:xmlpull:1.1.3.1
+|    \--- xpp3:xpp3_min:1.1.4c
++--- com.github.fommil:openssh:1.0
+|    +--- commons-codec:commons-codec:1.9
+|    \--- com.google.guava:guava:16.0 -> 18.0
++--- javax.mail:mail:1.5.0-b01
+|    \--- javax.activation:activation:1.1
++--- org.freemarker:freemarker:2.3.20
++--- com.google.apis:google-api-services-compute:v1-rev46-1.19.1
+|    \--- com.google.api-client:google-api-client:1.19.1
+|         +--- com.google.oauth-client:google-oauth-client:1.19.0
+|         |    +--- com.google.http-client:google-http-client:1.19.0
+|         |    |    +--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         |    |    \--- org.apache.httpcomponents:httpclient:4.0.1 -> 4.3.4 (*)
+|         |    \--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         \--- com.google.http-client:google-http-client-jackson2:1.19.0
+|              +--- com.google.http-client:google-http-client:1.19.0 (*)
+|              \--- com.fasterxml.jackson.core:jackson-core:2.1.3 -> 2.4.2
++--- com.google.apis:google-api-services-storage:v1-rev6-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- com.google.apis:google-api-services-dns:v1beta1-rev9-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- org.pacesys:openstack4j:2.0.0
+|    +--- org.pacesys.openstack4j.connectors:openstack4j-jersey2:2.0.0
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.10.1 -> 2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11
+|    |    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    |    +--- javax.annotation:javax.annotation-api:1.2
+|    |    |    |    +--- org.glassfish.jersey.bundles.repackaged:jersey-guava:2.11
+|    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05
+|    |    |    |    |    +--- javax.inject:javax.inject:1
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05
+|    |    |    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    |    |    \--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2:hk2-locator:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05 (*)
+|    |    |    |    |    \--- org.javassist:javassist:3.18.1-GA
+|    |    |    |    \--- org.glassfish.hk2:osgi-resource-locator:1.0.1
+|    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    \--- org.glassfish.hk2:hk2-locator:2.3.0-b05 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.media:jersey-media-json-jackson:2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.4.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.4.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson.core:jackson-annotations:2.3.2 -> 2.4.2
+|    |    +--- org.pacesys:openstack4j-core:2.0.0
+|    |    |    +--- com.google.guava:guava:17.0 -> 18.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    |    +--- com.google.guava:guava:17.0 -> 18.0
+|    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    +--- com.google.guava:guava:17.0 -> 18.0
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.0
++--- org.bouncycastle:bcprov-jdk15on:1.47 -> 1.51
++--- org.bouncycastle:bcpkix-jdk15on:1.47 -> 1.51 (*)
++--- org.jasypt:jasypt:1.9.2
++--- com.google.guava:guava:16.0.1 -> 18.0
++--- com.wordnik:swagger-core:1.5.2-M1
+|    +--- commons-lang:commons-lang:2.4 -> 2.6
+|    +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    \--- joda-time:joda-time:2.2 -> 2.8.1
+|    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    \--- com.wordnik:swagger-models:1.5.2-M1
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|         +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|         \--- com.wordnik:swagger-annotations:1.5.2-M1
++--- com.mangofactory:swagger-springmvc:1.0.2
+|    +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|    +--- com.google.guava:guava:15.0 -> 18.0
+|    +--- com.fasterxml:classmate:1.1.0
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- joda-time:joda-time:2.5 -> 2.8.1
+|    +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|    \--- com.mangofactory:swagger-models:1.0.2
+|         +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|         +--- com.google.guava:guava:15.0 -> 18.0
+|         +--- com.fasterxml:classmate:1.1.0
+|         +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|         +--- joda-time:joda-time:2.5 -> 2.8.1
+|         +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
+|         \--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.3.RELEASE (*)
++--- com.google.http-client:google-http-client-jackson2:1.17.0-rc -> 1.19.0 (*)
++--- com.google.oauth-client:google-oauth-client-jetty:1.17.0-rc
+|    +--- com.google.oauth-client:google-oauth-client-java6:1.17.0-rc
+|    |    \--- com.google.oauth-client:google-oauth-client:1.17.0-rc -> 1.19.0 (*)
+|    \--- org.mortbay.jetty:jetty:6.1.26
+|         \--- org.mortbay.jetty:jetty-util:6.1.26
++--- com.sequenceiq:azure-rest-client:0.1.35
+|    +--- org.codehaus.groovy:groovy-all:2.1.8
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- org.codehaus.jettison:jettison:1.3.5 (*)
+|    +--- com.thoughtworks.xstream:xstream:1.4.7 (*)
+|    +--- de.odysseus.staxon:staxon-jackson:1.3
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.1 -> 2.4.2
+|    |    \--- de.odysseus.staxon:staxon:1.3
+|    +--- de.odysseus.staxon:staxon:1.3
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1 (*)
++--- com.amazonaws:aws-java-sdk:1.9.35
+|    +--- com.amazonaws:aws-java-sdk-support:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35
+|    |         +--- org.apache.httpcomponents:httpclient:4.3.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |         \--- joda-time:joda-time:[2.2,) -> 2.8.1
+|    +--- com.amazonaws:aws-java-sdk-simpledb:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-storagegateway:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-route53:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-s3:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-kms:1.9.35
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-importexport:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sts:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-rds:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-redshift:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-glacier:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-sns:1.9.35
+|    |    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-iam:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-datapipeline:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-emr:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticache:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elastictranscoder:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ec2:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sns:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudtrail:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-logs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitoidentity:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitosync:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directconnect:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudformation:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudfront:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kinesis:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-opsworks:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ses:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-autoscaling:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudsearch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-swf-libraries:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-codedeploy:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kms:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-config:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-lambda:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ecs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudhsm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ssm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-workspaces:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-machinelearning:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directory:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
++--- com.jcraft:jsch:0.1.52
++--- com.hierynomus:sshj:0.11.0
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- com.jcraft:jzlib:1.1.3
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    \--- org.bouncycastle:bcprov-jdk15on:1.51
++--- project :core-model
+|    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    \--- org.apache.commons:commons-lang3:3.3.2
++--- project :orchestrator-api
+|    +--- org.slf4j:slf4j-api:1.7.12
+|    +--- org.mockito:mockito-all:1.10.19
+|    \--- junit:junit:4.12
+|         \--- org.hamcrest:hamcrest-core:1.3
++--- project :orchestrator-swarm
+|    +--- project :orchestrator-api (*)
+|    +--- com.github.docker-java:docker-java:1.3.0
+|    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.1.2 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.connectors:jersey-apache-connector:2.11
+|    |    |    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- org.glassfish.jersey.core:jersey-client:2.11 (*)
+|    |    |    \--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.4 (*)
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.11 (*)
+|    |    +--- de.gesellix:unix-socket-factory:2015-01-27T15-02-14
+|    |    |    \--- org.apache.httpcomponents:httpclient:4.3 -> 4.3.4 (*)
+|    |    +--- org.apache.commons:commons-compress:1.5
+|    |    |    \--- org.tukaani:xz:1.2
+|    |    +--- commons-codec:commons-codec:1.8 -> 1.9
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- commons-io:commons-io:2.3 -> 2.4
+|    |    +--- org.slf4j:slf4j-api:1.7.5 -> 1.7.12
+|    |    +--- com.google.guava:guava:18.0
+|    |    \--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    \--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.4.2 (*)
+\--- activation:activation:1.0.2
+     \--- javax.activation:activation:1.0.2 -> 1.1
+
+sonarRunner - The SonarRunner configuration to use to run analysis
+Download https://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.3/sonar-runner-dist-2.3.pom
+Download https://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner/2.3/sonar-runner-2.3.pom
+Download https://repo1.maven.org/maven2/org/codehaus/sonar-plugins/parent/17/parent-17.pom
+\--- org.codehaus.sonar.runner:sonar-runner-dist:2.3
+
+testCompile - Compile classpath for source set 'test'.
++--- com.sequenceiq:ambari-client21:2.1.9
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51
+|    |    \--- org.bouncycastle:bcprov-jdk15on:1.51
+|    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.5
+|    |    +--- org.apache.httpcomponents:httpcore:4.3.2
+|    |    +--- commons-logging:commons-logging:1.1.3
+|    |    \--- commons-codec:commons-codec:1.6 -> 1.9
+|    +--- commons-io:commons-io:2.4
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1
+|         +--- org.apache.httpcomponents:httpclient:4.2.1 -> 4.3.5 (*)
+|         +--- net.sf.json-lib:json-lib:2.3
+|         |    +--- commons-beanutils:commons-beanutils:1.8.0
+|         |    |    \--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    +--- commons-collections:commons-collections:3.2.1
+|         |    +--- commons-lang:commons-lang:2.4
+|         |    +--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    \--- net.sf.ezmorph:ezmorph:1.0.6
+|         |         \--- commons-lang:commons-lang:2.3 -> 2.4
+|         +--- net.sourceforge.nekohtml:nekohtml:1.9.16
+|         |    \--- xerces:xercesImpl:2.9.1
+|         |         \--- xml-apis:xml-apis:1.3.04
+|         \--- xml-resolver:xml-resolver:1.2
++--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE -> 1.1.8.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.1.8.RELEASE
+|    |    +--- org.springframework.boot:spring-boot:1.1.8.RELEASE
+|    |    |    +--- org.springframework:spring-core:4.0.7.RELEASE
+|    |    |    |    \--- commons-logging:commons-logging:1.1.3
+|    |    |    \--- org.springframework:spring-context:4.0.7.RELEASE
+|    |    |         +--- org.springframework:spring-aop:4.0.7.RELEASE
+|    |    |         |    +--- aopalliance:aopalliance:1.0
+|    |    |         |    +--- org.springframework:spring-beans:4.0.7.RELEASE
+|    |    |         |    |    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    |         |    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    |         +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    |         \--- org.springframework:spring-expression:4.0.7.RELEASE
+|    |    |              \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.1.8.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.1.8.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-starter-logging:1.1.8.RELEASE
+|    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:jul-to-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:log4j-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    \--- ch.qos.logback:logback-classic:1.1.2
+|    |    |         +--- ch.qos.logback:logback-core:1.1.2
+|    |    |         \--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    \--- org.yaml:snakeyaml:1.13
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:1.1.8.RELEASE
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:7.0.55
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:7.0.55
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.55
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.3.4 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    +--- org.hibernate:hibernate-validator:5.0.3.Final -> 5.1.1.Final
+|    |    +--- javax.validation:validation-api:1.1.0.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    \--- com.fasterxml:classmate:1.0.0 -> 1.1.0
+|    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-web:4.0.7.RELEASE
+|    |    +--- org.springframework:spring-aop:4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-webmvc:4.0.7.RELEASE
+|         +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|         +--- org.springframework:spring-context:4.0.7.RELEASE (*)
+|         +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|         +--- org.springframework:spring-expression:4.0.7.RELEASE (*)
+|         \--- org.springframework:spring-web:4.0.7.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-actuator:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-actuator:1.0.2.RELEASE
+|         +--- org.springframework.boot:spring-boot:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|         +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2 (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|         \--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-data-jpa:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-aop:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    \--- org.aspectj:aspectjweaver:1.7.4
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE
+|    |    |    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    \--- org.springframework:spring-tx:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |         \--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.apache.tomcat:tomcat-jdbc:7.0.52
+|    |    |    \--- org.apache.tomcat:tomcat-juli:7.0.52
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.hibernate:hibernate-entitymanager:4.3.1.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    +--- org.hibernate:hibernate-core:4.3.1.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    |    \--- xml-apis:xml-apis:1.0.b2 -> 1.3.04
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final
+|    |    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    |    \--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    \--- org.jboss:jandex:1.1.0.Final
+|    |    +--- dom4j:dom4j:1.6.1 (*)
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final (*)
+|    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    \--- org.javassist:javassist:3.18.1-GA
+|    +--- org.springframework:spring-orm:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.springframework.data:spring-data-jpa:1.5.2.RELEASE
+|    |    +--- org.springframework.data:spring-data-commons:1.7.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-tx:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    \--- org.springframework:spring-aspects:4.0.3.RELEASE
+|         \--- org.aspectj:aspectjweaver:1.7.4
++--- org.springframework.boot:spring-boot-starter-websocket:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    +--- org.springframework:spring-websocket:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    \--- org.apache.tomcat.embed:tomcat-embed-websocket:7.0.52
+|         \--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52 -> 7.0.55
++--- org.springframework.security.oauth:spring-security-oauth2:2.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework.security:spring-security-config:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-web:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- commons-codec:commons-codec:1.6 -> 1.9
+|    \--- org.codehaus.jackson:jackson-mapper-asl:1.9.13
+|         \--- org.codehaus.jackson:jackson-core-asl:1.9.13
++--- org.springframework.security:spring-security-config:3.2.3.RELEASE (*)
++--- org.springframework.security:spring-security-web:3.2.3.RELEASE (*)
++--- org.springframework:spring-messaging:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
++--- org.springframework:spring-context-support:4.0.3.RELEASE -> 4.0.7.RELEASE
+|    +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
++--- io.projectreactor:reactor-core:2.0.3.RELEASE
+|    +--- org.reactivestreams:reactive-streams:1.0.0
+|    \--- org.slf4j:slf4j-api:1.7.11 -> 1.7.12
++--- io.projectreactor:reactor-bus:2.0.3.RELEASE
+|    +--- com.goldmansachs:gs-collections:5.1.0
+|    |    \--- com.goldmansachs:gs-collections-api:5.1.0
+|    \--- io.projectreactor:reactor-core:2.0.3.RELEASE (*)
++--- net.sf.ehcache:ehcache:2.8.3
+|    \--- org.slf4j:slf4j-api:1.6.6 -> 1.7.12
++--- org.postgresql:postgresql:9.3-1101-jdbc41
++--- org.hibernate:hibernate-validator:5.1.1.Final (*)
++--- org.apache.commons:commons-lang3:3.3.2
++--- com.sequenceiq:consul-api:1.10
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- commons-logging:commons-logging:1.1 -> 1.1.3
+|    +--- com.google.code.gson:gson:2.3
+|    \--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.5 (*)
++--- org.codehaus.jettison:jettison:1.3.5
+|    \--- stax:stax-api:1.0.1
++--- commons-io:commons-io:2.4
++--- commons-net:commons-net:3.3
++--- com.thoughtworks.xstream:xstream:1.4.7
+|    +--- xmlpull:xmlpull:1.1.3.1
+|    \--- xpp3:xpp3_min:1.1.4c
++--- com.github.fommil:openssh:1.0
+|    +--- commons-codec:commons-codec:1.9
+|    \--- com.google.guava:guava:16.0 -> 17.0
++--- javax.mail:mail:1.5.0-b01
+|    \--- javax.activation:activation:1.1
++--- org.freemarker:freemarker:2.3.20
++--- com.google.apis:google-api-services-compute:v1-rev46-1.19.1
+|    \--- com.google.api-client:google-api-client:1.19.1
+|         +--- com.google.oauth-client:google-oauth-client:1.19.0
+|         |    +--- com.google.http-client:google-http-client:1.19.0
+|         |    |    +--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         |    |    \--- org.apache.httpcomponents:httpclient:4.0.1 -> 4.3.5 (*)
+|         |    \--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         \--- com.google.http-client:google-http-client-jackson2:1.19.0
+|              +--- com.google.http-client:google-http-client:1.19.0 (*)
+|              \--- com.fasterxml.jackson.core:jackson-core:2.1.3 -> 2.4.2
++--- com.google.apis:google-api-services-storage:v1-rev6-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- com.google.apis:google-api-services-dns:v1beta1-rev9-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- org.pacesys:openstack4j:2.0.0
+|    +--- org.pacesys.openstack4j.connectors:openstack4j-jersey2:2.0.0
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.10.1
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.10.1 -> 2.11
+|    |    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    |    +--- javax.annotation:javax.annotation-api:1.2
+|    |    |    |    +--- org.glassfish.jersey.bundles.repackaged:jersey-guava:2.11
+|    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05
+|    |    |    |    |    +--- javax.inject:javax.inject:1
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05
+|    |    |    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    |    |    \--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2:hk2-locator:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05 (*)
+|    |    |    |    |    \--- org.javassist:javassist:3.18.1-GA
+|    |    |    |    \--- org.glassfish.hk2:osgi-resource-locator:1.0.1
+|    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    \--- org.glassfish.hk2:hk2-locator:2.3.0-b05 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.media:jersey-media-json-jackson:2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.2 -> 2.4.2
+|    |    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2
+|    |    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.3.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.3.2 -> 2.4.2
+|    |    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson.core:jackson-annotations:2.3.2 -> 2.4.2
+|    |    +--- org.pacesys:openstack4j-core:2.0.0
+|    |    |    +--- com.google.guava:guava:17.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    |    +--- com.google.guava:guava:17.0
+|    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    +--- com.google.guava:guava:17.0
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.0
++--- org.bouncycastle:bcprov-jdk15on:1.47 -> 1.51
++--- org.bouncycastle:bcpkix-jdk15on:1.47 -> 1.51 (*)
++--- org.jasypt:jasypt:1.9.2
++--- com.google.guava:guava:16.0.1 -> 17.0
++--- com.wordnik:swagger-core:1.5.2-M1
+|    +--- commons-lang:commons-lang:2.4
+|    +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    \--- joda-time:joda-time:2.2 -> 2.8.1
+|    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    \--- com.wordnik:swagger-models:1.5.2-M1
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|         +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|         \--- com.wordnik:swagger-annotations:1.5.2-M1
++--- com.mangofactory:swagger-springmvc:1.0.2
+|    +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|    +--- com.google.guava:guava:15.0 -> 17.0
+|    +--- com.fasterxml:classmate:1.1.0
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- joda-time:joda-time:2.5 -> 2.8.1
+|    +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
+|    \--- com.mangofactory:swagger-models:1.0.2
+|         +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|         +--- com.google.guava:guava:15.0 -> 17.0
+|         +--- com.fasterxml:classmate:1.1.0
+|         +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|         +--- joda-time:joda-time:2.5 -> 2.8.1
+|         +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
+|         \--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
++--- com.google.http-client:google-http-client-jackson2:1.17.0-rc -> 1.19.0 (*)
++--- com.google.oauth-client:google-oauth-client-jetty:1.17.0-rc
+|    +--- com.google.oauth-client:google-oauth-client-java6:1.17.0-rc
+|    |    \--- com.google.oauth-client:google-oauth-client:1.17.0-rc -> 1.19.0 (*)
+|    \--- org.mortbay.jetty:jetty:6.1.26
+|         \--- org.mortbay.jetty:jetty-util:6.1.26
++--- com.sequenceiq:azure-rest-client:0.1.35
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- org.codehaus.jettison:jettison:1.3.5 (*)
+|    +--- com.thoughtworks.xstream:xstream:1.4.7 (*)
+|    +--- de.odysseus.staxon:staxon-jackson:1.3
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.1 -> 2.4.2
+|    |    \--- de.odysseus.staxon:staxon:1.3
+|    +--- de.odysseus.staxon:staxon:1.3
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1 (*)
++--- com.amazonaws:aws-java-sdk:1.9.35
+|    +--- com.amazonaws:aws-java-sdk-support:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35
+|    |         +--- org.apache.httpcomponents:httpclient:4.3.4 -> 4.3.5 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |         \--- joda-time:joda-time:[2.2,) -> 2.8.1
+|    +--- com.amazonaws:aws-java-sdk-simpledb:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-storagegateway:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-route53:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-s3:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-kms:1.9.35
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-importexport:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sts:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-rds:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-redshift:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-glacier:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-sns:1.9.35
+|    |    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-iam:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-datapipeline:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-emr:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticache:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elastictranscoder:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ec2:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sns:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudtrail:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-logs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitoidentity:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitosync:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directconnect:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudformation:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudfront:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kinesis:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-opsworks:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ses:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-autoscaling:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudsearch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-swf-libraries:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-codedeploy:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kms:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-config:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-lambda:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ecs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudhsm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ssm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-workspaces:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-machinelearning:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directory:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
++--- com.jcraft:jsch:0.1.52
++--- com.hierynomus:sshj:0.11.0
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- com.jcraft:jzlib:1.1.3
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    \--- org.bouncycastle:bcprov-jdk15on:1.51
++--- project :core-model
+|    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    \--- org.apache.commons:commons-lang3:3.3.2
++--- project :orchestrator-api
+|    +--- org.slf4j:slf4j-api:1.7.12
+|    +--- org.mockito:mockito-all:1.10.19
+|    \--- junit:junit:4.12
+|         \--- org.hamcrest:hamcrest-core:1.3
++--- org.springframework.boot:spring-boot-starter-test:1.1.8.RELEASE
+|    +--- junit:junit:4.11 -> 4.12 (*)
+|    +--- org.mockito:mockito-core:1.9.5
+|    |    +--- org.hamcrest:hamcrest-core:1.1 -> 1.3
+|    |    \--- org.objenesis:objenesis:1.0
+|    +--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.hamcrest:hamcrest-library:1.3
+|    |    \--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-test:4.0.7.RELEASE
+|         \--- org.springframework:spring-core:4.0.7.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-freemarker:1.1.8.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.1.8.RELEASE (*)
+|    +--- org.springframework.boot:spring-boot-starter-web:1.1.8.RELEASE (*)
+|    +--- org.freemarker:freemarker:2.3.20
+|    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-context-support:4.0.7.RELEASE (*)
++--- com.jayway.restassured:rest-assured:2.3.4
+|    +--- org.codehaus.groovy:groovy:2.3.6
+|    +--- org.codehaus.groovy:groovy-xml:2.3.6
+|    |    \--- org.codehaus.groovy:groovy:2.3.6
+|    +--- org.apache.httpcomponents:httpclient:4.3.5 (*)
+|    +--- org.apache.httpcomponents:httpmime:4.3.5
+|    |    \--- org.apache.httpcomponents:httpclient:4.3.5 (*)
+|    +--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.hamcrest:hamcrest-library:1.3 (*)
+|    +--- org.ccil.cowan.tagsoup:tagsoup:1.2.1
+|    +--- com.jayway.restassured:json-path:2.3.4
+|    |    +--- org.codehaus.groovy:groovy-json:2.3.6
+|    |    |    \--- org.codehaus.groovy:groovy:2.3.6
+|    |    +--- org.codehaus.groovy:groovy:2.3.6
+|    |    \--- com.jayway.restassured:rest-assured-common:2.3.4
+|    |         +--- org.codehaus.groovy:groovy:2.3.6
+|    |         \--- org.apache.commons:commons-lang3:3.3.2
+|    \--- com.jayway.restassured:xml-path:2.3.4
+|         +--- org.codehaus.groovy:groovy-xml:2.3.6 (*)
+|         +--- org.codehaus.groovy:groovy:2.3.6
+|         +--- com.jayway.restassured:rest-assured-common:2.3.4 (*)
+|         +--- org.apache.commons:commons-lang3:3.3.2
+|         \--- org.ccil.cowan.tagsoup:tagsoup:1.2.1
+\--- com.jayway.restassured:json-path:2.3.4 (*)
+
+testRuntime - Runtime classpath for source set 'test'.
++--- com.sequenceiq:ambari-client21:2.1.9
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51
+|    |    \--- org.bouncycastle:bcprov-jdk15on:1.51
+|    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.5
+|    |    +--- org.apache.httpcomponents:httpcore:4.3.2
+|    |    +--- commons-logging:commons-logging:1.1.3
+|    |    \--- commons-codec:commons-codec:1.6 -> 1.9
+|    +--- commons-io:commons-io:2.4
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1
+|         +--- org.apache.httpcomponents:httpclient:4.2.1 -> 4.3.5 (*)
+|         +--- net.sf.json-lib:json-lib:2.3
+|         |    +--- commons-beanutils:commons-beanutils:1.8.0
+|         |    |    \--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    +--- commons-collections:commons-collections:3.2.1
+|         |    +--- commons-lang:commons-lang:2.4 -> 2.6
+|         |    +--- commons-logging:commons-logging:1.1.1 -> 1.1.3
+|         |    \--- net.sf.ezmorph:ezmorph:1.0.6
+|         |         \--- commons-lang:commons-lang:2.3 -> 2.6
+|         +--- net.sourceforge.nekohtml:nekohtml:1.9.16
+|         |    \--- xerces:xercesImpl:2.9.1
+|         |         \--- xml-apis:xml-apis:1.3.04
+|         \--- xml-resolver:xml-resolver:1.2
++--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE -> 1.1.8.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.1.8.RELEASE
+|    |    +--- org.springframework.boot:spring-boot:1.1.8.RELEASE
+|    |    |    +--- org.springframework:spring-core:4.0.7.RELEASE
+|    |    |    |    \--- commons-logging:commons-logging:1.1.3
+|    |    |    \--- org.springframework:spring-context:4.0.7.RELEASE
+|    |    |         +--- org.springframework:spring-aop:4.0.7.RELEASE
+|    |    |         |    +--- aopalliance:aopalliance:1.0
+|    |    |         |    +--- org.springframework:spring-beans:4.0.7.RELEASE
+|    |    |         |    |    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    |         |    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    |         +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|    |    |         +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    |         \--- org.springframework:spring-expression:4.0.7.RELEASE
+|    |    |              \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-autoconfigure:1.1.8.RELEASE
+|    |    |    \--- org.springframework.boot:spring-boot:1.1.8.RELEASE (*)
+|    |    +--- org.springframework.boot:spring-boot-starter-logging:1.1.8.RELEASE
+|    |    |    +--- org.slf4j:jcl-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:jul-to-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    +--- org.slf4j:log4j-over-slf4j:1.7.7
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    |    |    \--- ch.qos.logback:logback-classic:1.1.2
+|    |    |         +--- ch.qos.logback:logback-core:1.1.2
+|    |    |         \--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    |    \--- org.yaml:snakeyaml:1.13
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:1.1.8.RELEASE
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:7.0.55
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:7.0.55
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.55
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.3.4 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    +--- org.hibernate:hibernate-validator:5.0.3.Final -> 5.1.1.Final
+|    |    +--- javax.validation:validation-api:1.1.0.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    \--- com.fasterxml:classmate:1.0.0 -> 1.1.0
+|    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-web:4.0.7.RELEASE
+|    |    +--- org.springframework:spring-aop:4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-webmvc:4.0.7.RELEASE
+|         +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|         +--- org.springframework:spring-context:4.0.7.RELEASE (*)
+|         +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|         +--- org.springframework:spring-expression:4.0.7.RELEASE (*)
+|         \--- org.springframework:spring-web:4.0.7.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-actuator:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    \--- org.springframework.boot:spring-boot-actuator:1.0.2.RELEASE
+|         +--- org.springframework.boot:spring-boot:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|         +--- org.springframework.boot:spring-boot-autoconfigure:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.3.3 -> 2.4.2 (*)
+|         +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|         \--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-data-jpa:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-aop:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    \--- org.aspectj:aspectjweaver:1.7.4
+|    +--- org.springframework.boot:spring-boot-starter-jdbc:1.0.2.RELEASE
+|    |    +--- org.springframework.boot:spring-boot-starter:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE
+|    |    |    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    \--- org.springframework:spring-tx:4.0.3.RELEASE
+|    |    |         +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |         \--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.apache.tomcat:tomcat-jdbc:7.0.52
+|    |    |    \--- org.apache.tomcat:tomcat-juli:7.0.52
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.hibernate:hibernate-entitymanager:4.3.1.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    +--- org.hibernate:hibernate-core:4.3.1.Final
+|    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    +--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    |    +--- dom4j:dom4j:1.6.1
+|    |    |    |    \--- xml-apis:xml-apis:1.0.b2 -> 1.3.04
+|    |    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final
+|    |    |    |    +--- org.jboss.logging:jboss-logging:3.1.3.GA
+|    |    |    |    \--- org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1
+|    |    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    |    +--- org.javassist:javassist:3.18.1-GA
+|    |    |    +--- antlr:antlr:2.7.7
+|    |    |    \--- org.jboss:jandex:1.1.0.Final
+|    |    +--- dom4j:dom4j:1.6.1 (*)
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:4.0.4.Final (*)
+|    |    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    |    +--- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final
+|    |    \--- org.javassist:javassist:3.18.1-GA
+|    +--- org.springframework:spring-orm:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-jdbc:4.0.3.RELEASE (*)
+|    |    \--- org.springframework:spring-tx:4.0.3.RELEASE (*)
+|    +--- org.springframework.data:spring-data-jpa:1.5.2.RELEASE
+|    |    +--- org.springframework.data:spring-data-commons:1.7.2.RELEASE
+|    |    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-tx:3.2.8.RELEASE -> 4.0.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.aspectj:aspectjrt:1.7.4
+|    |    +--- org.slf4j:slf4j-api:1.7.6 -> 1.7.12
+|    |    \--- org.slf4j:jcl-over-slf4j:1.7.6 -> 1.7.7 (*)
+|    \--- org.springframework:spring-aspects:4.0.3.RELEASE
+|         \--- org.aspectj:aspectjweaver:1.7.4
++--- org.springframework.boot:spring-boot-starter-websocket:1.0.2.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter-web:1.0.2.RELEASE -> 1.1.8.RELEASE (*)
+|    +--- org.springframework:spring-websocket:4.0.3.RELEASE
+|    |    +--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-web:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    \--- org.apache.tomcat.embed:tomcat-embed-websocket:7.0.52
+|         \--- org.apache.tomcat.embed:tomcat-embed-core:7.0.52 -> 7.0.55
++--- org.springframework.security.oauth:spring-security-oauth2:2.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework.security:spring-security-config:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-aop:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework.security:spring-security-web:3.2.3.RELEASE
+|    |    +--- aopalliance:aopalliance:1.0
+|    |    +--- org.springframework.security:spring-security-core:3.2.3.RELEASE (*)
+|    |    +--- org.springframework:spring-beans:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-context:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-core:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    +--- org.springframework:spring-expression:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    |    \--- org.springframework:spring-web:3.2.8.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- commons-codec:commons-codec:1.6 -> 1.9
+|    \--- org.codehaus.jackson:jackson-mapper-asl:1.9.13
+|         \--- org.codehaus.jackson:jackson-core-asl:1.9.13
++--- org.springframework.security:spring-security-config:3.2.3.RELEASE (*)
++--- org.springframework.security:spring-security-web:3.2.3.RELEASE (*)
++--- org.springframework:spring-messaging:4.0.3.RELEASE
+|    +--- org.springframework:spring-beans:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.3.RELEASE -> 4.0.7.RELEASE (*)
++--- org.springframework:spring-context-support:4.0.3.RELEASE -> 4.0.7.RELEASE
+|    +--- org.springframework:spring-beans:4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-context:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-core:4.0.7.RELEASE (*)
++--- io.projectreactor:reactor-core:2.0.3.RELEASE
+|    +--- org.reactivestreams:reactive-streams:1.0.0
+|    \--- org.slf4j:slf4j-api:1.7.11 -> 1.7.12
++--- io.projectreactor:reactor-bus:2.0.3.RELEASE
+|    +--- com.goldmansachs:gs-collections:5.1.0
+|    |    \--- com.goldmansachs:gs-collections-api:5.1.0
+|    \--- io.projectreactor:reactor-core:2.0.3.RELEASE (*)
++--- net.sf.ehcache:ehcache:2.8.3
+|    \--- org.slf4j:slf4j-api:1.6.6 -> 1.7.12
++--- org.postgresql:postgresql:9.3-1101-jdbc41
++--- org.hibernate:hibernate-validator:5.1.1.Final (*)
++--- org.apache.commons:commons-lang3:3.3.2
++--- com.sequenceiq:consul-api:1.10
+|    +--- org.apache.httpcomponents:httpcore:4.3.1 -> 4.3.2
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- commons-logging:commons-logging:1.1 -> 1.1.3
+|    +--- com.google.code.gson:gson:2.3
+|    \--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.5 (*)
++--- org.codehaus.jettison:jettison:1.3.5
+|    \--- stax:stax-api:1.0.1
++--- commons-io:commons-io:2.4
++--- commons-net:commons-net:3.3
++--- com.thoughtworks.xstream:xstream:1.4.7
+|    +--- xmlpull:xmlpull:1.1.3.1
+|    \--- xpp3:xpp3_min:1.1.4c
++--- com.github.fommil:openssh:1.0
+|    +--- commons-codec:commons-codec:1.9
+|    \--- com.google.guava:guava:16.0 -> 18.0
++--- javax.mail:mail:1.5.0-b01
+|    \--- javax.activation:activation:1.1
++--- org.freemarker:freemarker:2.3.20
++--- com.google.apis:google-api-services-compute:v1-rev46-1.19.1
+|    \--- com.google.api-client:google-api-client:1.19.1
+|         +--- com.google.oauth-client:google-oauth-client:1.19.0
+|         |    +--- com.google.http-client:google-http-client:1.19.0
+|         |    |    +--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         |    |    \--- org.apache.httpcomponents:httpclient:4.0.1 -> 4.3.5 (*)
+|         |    \--- com.google.code.findbugs:jsr305:1.3.9 -> 2.0.0
+|         \--- com.google.http-client:google-http-client-jackson2:1.19.0
+|              +--- com.google.http-client:google-http-client:1.19.0 (*)
+|              \--- com.fasterxml.jackson.core:jackson-core:2.1.3 -> 2.4.2
++--- com.google.apis:google-api-services-storage:v1-rev6-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- com.google.apis:google-api-services-dns:v1beta1-rev9-1.19.0
+|    \--- com.google.api-client:google-api-client:1.19.0 -> 1.19.1 (*)
++--- org.pacesys:openstack4j:2.0.0
+|    +--- org.pacesys.openstack4j.connectors:openstack4j-jersey2:2.0.0
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.10.1 -> 2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11
+|    |    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    |    +--- javax.annotation:javax.annotation-api:1.2
+|    |    |    |    +--- org.glassfish.jersey.bundles.repackaged:jersey-guava:2.11
+|    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05
+|    |    |    |    |    +--- javax.inject:javax.inject:1
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05
+|    |    |    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    |    |    \--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    +--- org.glassfish.hk2:hk2-locator:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b05
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    |    |    +--- org.glassfish.hk2:hk2-utils:2.3.0-b05 (*)
+|    |    |    |    |    \--- org.javassist:javassist:3.18.1-GA
+|    |    |    |    \--- org.glassfish.hk2:osgi-resource-locator:1.0.1
+|    |    |    +--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    |    +--- org.glassfish.hk2:hk2-api:2.3.0-b05 (*)
+|    |    |    +--- org.glassfish.hk2.external:javax.inject:2.3.0-b05
+|    |    |    \--- org.glassfish.hk2:hk2-locator:2.3.0-b05 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.media:jersey-media-json-jackson:2.11
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.3.2 -> 2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.4.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.4.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson.core:jackson-annotations:2.3.2 -> 2.4.2
+|    |    +--- org.pacesys:openstack4j-core:2.0.0
+|    |    |    +--- com.google.guava:guava:17.0 -> 18.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    |    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    |    +--- com.google.guava:guava:17.0 -> 18.0
+|    |    \--- com.google.code.findbugs:jsr305:2.0.0
+|    +--- com.google.guava:guava:17.0 -> 18.0
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.4.1.3 -> 2.4.2 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.0
++--- org.bouncycastle:bcprov-jdk15on:1.47 -> 1.51
++--- org.bouncycastle:bcpkix-jdk15on:1.47 -> 1.51 (*)
++--- org.jasypt:jasypt:1.9.2
++--- com.google.guava:guava:16.0.1 -> 18.0
++--- com.wordnik:swagger-core:1.5.2-M1
+|    +--- commons-lang:commons-lang:2.4 -> 2.6
+|    +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.4.0 -> 2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.4.2 (*)
+|    |    \--- joda-time:joda-time:2.2 -> 2.8.1
+|    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.4.2
+|    |    \--- com.fasterxml.jackson.core:jackson-core:2.4.2
+|    \--- com.wordnik:swagger-models:1.5.2-M1
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.4.2
+|         +--- org.slf4j:slf4j-api:1.6.3 -> 1.7.12
+|         \--- com.wordnik:swagger-annotations:1.5.2-M1
++--- com.mangofactory:swagger-springmvc:1.0.2
+|    +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|    +--- com.google.guava:guava:15.0 -> 18.0
+|    +--- com.fasterxml:classmate:1.1.0
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- joda-time:joda-time:2.5 -> 2.8.1
+|    +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
+|    +--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
+|    \--- com.mangofactory:swagger-models:1.0.2
+|         +--- com.wordnik:swagger-annotations:1.3.11 -> 1.5.2-M1
+|         +--- com.google.guava:guava:15.0 -> 18.0
+|         +--- com.fasterxml:classmate:1.1.0
+|         +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|         +--- joda-time:joda-time:2.5 -> 2.8.1
+|         +--- org.springframework:spring-web:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
+|         \--- org.springframework:spring-webmvc:3.2.9.RELEASE -> 4.0.7.RELEASE (*)
++--- com.google.http-client:google-http-client-jackson2:1.17.0-rc -> 1.19.0 (*)
++--- com.google.oauth-client:google-oauth-client-jetty:1.17.0-rc
+|    +--- com.google.oauth-client:google-oauth-client-java6:1.17.0-rc
+|    |    \--- com.google.oauth-client:google-oauth-client:1.17.0-rc -> 1.19.0 (*)
+|    \--- org.mortbay.jetty:jetty:6.1.26
+|         \--- org.mortbay.jetty:jetty-util:6.1.26
++--- com.sequenceiq:azure-rest-client:0.1.35
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    +--- org.codehaus.jettison:jettison:1.3.5 (*)
+|    +--- com.thoughtworks.xstream:xstream:1.4.7 (*)
+|    +--- de.odysseus.staxon:staxon-jackson:1.3
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.3.1 -> 2.4.2
+|    |    \--- de.odysseus.staxon:staxon:1.3
+|    +--- de.odysseus.staxon:staxon:1.3
+|    \--- org.codehaus.groovy.modules.http-builder:http-builder:0.7.1 (*)
++--- com.amazonaws:aws-java-sdk:1.9.35
+|    +--- com.amazonaws:aws-java-sdk-support:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35
+|    |         +--- org.apache.httpcomponents:httpclient:4.3.4 -> 4.3.5 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.3.2 -> 2.4.2 (*)
+|    |         \--- joda-time:joda-time:[2.2,) -> 2.8.1
+|    +--- com.amazonaws:aws-java-sdk-simpledb:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-storagegateway:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-route53:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-s3:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-kms:1.9.35
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-importexport:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sts:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-rds:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-redshift:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticbeanstalk:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-glacier:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-sns:1.9.35
+|    |    |    +--- com.amazonaws:aws-java-sdk-sqs:1.9.35 (*)
+|    |    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-iam:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-datapipeline:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticloadbalancing:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-emr:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elasticache:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-elastictranscoder:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ec2:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-s3:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-sns:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudtrail:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-logs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitoidentity:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cognitosync:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directconnect:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudformation:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudfront:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kinesis:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-opsworks:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ses:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-autoscaling:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudsearch:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudwatchmetrics:1.9.35
+|    |    +--- com.amazonaws:aws-java-sdk-cloudwatch:1.9.35 (*)
+|    |    +--- com.amazonaws:aws-java-sdk-dynamodb:1.9.35 (*)
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-swf-libraries:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-simpleworkflow:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-codedeploy:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-kms:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-config:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-lambda:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ecs:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-cloudhsm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-ssm:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-workspaces:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-machinelearning:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    +--- com.amazonaws:aws-java-sdk-directory:1.9.35
+|    |    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
+|    \--- com.amazonaws:aws-java-sdk-core:1.9.35 (*)
++--- com.jcraft:jsch:0.1.52
++--- com.hierynomus:sshj:0.11.0
+|    +--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    +--- com.jcraft:jzlib:1.1.3
+|    +--- org.slf4j:slf4j-api:1.7.7 -> 1.7.12
+|    \--- org.bouncycastle:bcprov-jdk15on:1.51
++--- project :core-model
+|    +--- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final
+|    \--- org.apache.commons:commons-lang3:3.3.2
++--- project :orchestrator-api
+|    +--- org.slf4j:slf4j-api:1.7.12
+|    +--- org.mockito:mockito-all:1.10.19
+|    \--- junit:junit:4.12
+|         \--- org.hamcrest:hamcrest-core:1.3
++--- project :orchestrator-swarm
+|    +--- project :orchestrator-api (*)
+|    +--- com.github.docker-java:docker-java:1.3.0
+|    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.1.2 -> 2.4.2 (*)
+|    |    +--- org.glassfish.jersey.connectors:jersey-apache-connector:2.11
+|    |    |    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.5 (*)
+|    |    |    +--- org.glassfish.jersey.core:jersey-common:2.11 (*)
+|    |    |    +--- org.glassfish.jersey.core:jersey-client:2.11 (*)
+|    |    |    \--- javax.ws.rs:javax.ws.rs-api:2.0
+|    |    +--- org.apache.httpcomponents:httpclient:4.3.1 -> 4.3.5 (*)
+|    |    +--- org.glassfish.jersey.core:jersey-client:2.11 (*)
+|    |    +--- de.gesellix:unix-socket-factory:2015-01-27T15-02-14
+|    |    |    \--- org.apache.httpcomponents:httpclient:4.3 -> 4.3.5 (*)
+|    |    +--- org.apache.commons:commons-compress:1.5
+|    |    |    \--- org.tukaani:xz:1.2
+|    |    +--- commons-codec:commons-codec:1.8 -> 1.9
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- commons-io:commons-io:2.3 -> 2.4
+|    |    +--- org.slf4j:slf4j-api:1.7.5 -> 1.7.12
+|    |    +--- com.google.guava:guava:18.0
+|    |    \--- org.bouncycastle:bcpkix-jdk15on:1.51 (*)
+|    \--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.4.2 (*)
++--- activation:activation:1.0.2
+|    \--- javax.activation:activation:1.0.2 -> 1.1
++--- org.springframework.boot:spring-boot-starter-test:1.1.8.RELEASE
+|    +--- junit:junit:4.11 -> 4.12 (*)
+|    +--- org.mockito:mockito-core:1.9.5
+|    |    +--- org.hamcrest:hamcrest-core:1.1 -> 1.3
+|    |    \--- org.objenesis:objenesis:1.0
+|    +--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.hamcrest:hamcrest-library:1.3
+|    |    \--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-test:4.0.7.RELEASE
+|         \--- org.springframework:spring-core:4.0.7.RELEASE (*)
++--- org.springframework.boot:spring-boot-starter-freemarker:1.1.8.RELEASE
+|    +--- org.springframework.boot:spring-boot-starter:1.1.8.RELEASE (*)
+|    +--- org.springframework.boot:spring-boot-starter-web:1.1.8.RELEASE (*)
+|    +--- org.freemarker:freemarker:2.3.20
+|    +--- org.springframework:spring-core:4.0.7.RELEASE (*)
+|    \--- org.springframework:spring-context-support:4.0.7.RELEASE (*)
++--- com.jayway.restassured:rest-assured:2.3.4
+|    +--- org.codehaus.groovy:groovy:2.3.6
+|    +--- org.codehaus.groovy:groovy-xml:2.3.6
+|    |    \--- org.codehaus.groovy:groovy:2.3.6
+|    +--- org.apache.httpcomponents:httpclient:4.3.5 (*)
+|    +--- org.apache.httpcomponents:httpmime:4.3.5
+|    |    \--- org.apache.httpcomponents:httpclient:4.3.5 (*)
+|    +--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.hamcrest:hamcrest-library:1.3 (*)
+|    +--- org.ccil.cowan.tagsoup:tagsoup:1.2.1
+|    +--- com.jayway.restassured:json-path:2.3.4
+|    |    +--- org.codehaus.groovy:groovy-json:2.3.6
+|    |    |    \--- org.codehaus.groovy:groovy:2.3.6
+|    |    +--- org.codehaus.groovy:groovy:2.3.6
+|    |    \--- com.jayway.restassured:rest-assured-common:2.3.4
+|    |         +--- org.codehaus.groovy:groovy:2.3.6
+|    |         \--- org.apache.commons:commons-lang3:3.3.2
+|    \--- com.jayway.restassured:xml-path:2.3.4
+|         +--- org.codehaus.groovy:groovy-xml:2.3.6 (*)
+|         +--- org.codehaus.groovy:groovy:2.3.6
+|         +--- com.jayway.restassured:rest-assured-common:2.3.4 (*)
+|         +--- org.apache.commons:commons-lang3:3.3.2
+|         \--- org.ccil.cowan.tagsoup:tagsoup:1.2.1
+\--- com.jayway.restassured:json-path:2.3.4 (*)
+
+(*) - dependencies omitted (listed previously)
+
+BUILD SUCCESSFUL
+
+Total time: 23.63 secs

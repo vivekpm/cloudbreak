@@ -1,5 +1,8 @@
 package com.sequenceiq.cloudbreak.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,6 +17,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import com.sequenceiq.cloudbreak.common.type.CloudPlatform;
 import com.sequenceiq.cloudbreak.common.type.ResourceStatus;
@@ -69,6 +75,7 @@ import com.sequenceiq.cloudbreak.common.type.ResourceStatus;
                         + "WHERE r.account= :account "
                         + "AND (r.status = 'DEFAULT_DELETED' OR r.status = 'DEFAULT') ")
 })
+@TypeDef(name = "jsonb", typeClass = JSONBUserType.class)
 public abstract class Network {
 
     @Id
@@ -92,6 +99,13 @@ public abstract class Network {
 
     @Enumerated(EnumType.STRING)
     private ResourceStatus status;
+
+    @Column(nullable = false)
+    private String cloudPlatform;
+
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private Map<String, String> data = new HashMap<>();
 
     public Long getId() {
         return id;
@@ -155,6 +169,22 @@ public abstract class Network {
 
     public void setStatus(ResourceStatus status) {
         this.status = status;
+    }
+
+    public String getCloudPlatform() {
+        return cloudPlatform;
+    }
+
+    public void setCloudPlatform(String cloudPlatform) {
+        this.cloudPlatform = cloudPlatform;
+    }
+
+    public Map<String, String> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, String> data) {
+        this.data = data;
     }
 
     public abstract List<CloudPlatform> cloudPlatform();
