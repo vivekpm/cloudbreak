@@ -18,6 +18,7 @@ import com.sequenceiq.cloudbreak.domain.InstanceStatus;
 import com.sequenceiq.cloudbreak.domain.Stack;
 import com.sequenceiq.cloudbreak.repository.ClusterRepository;
 import com.sequenceiq.cloudbreak.repository.HostGroupRepository;
+import com.sequenceiq.cloudbreak.repository.ResourceRepository;
 import com.sequenceiq.cloudbreak.repository.StackRepository;
 import com.sequenceiq.cloudbreak.repository.StackUpdater;
 import com.sequenceiq.cloudbreak.service.stack.connector.CloudPlatformConnector;
@@ -42,6 +43,9 @@ public class TerminationService {
     @Inject
     private HostGroupRepository hostGroupRepository;
 
+    @Inject
+    private ResourceRepository resourceRepository;
+
     public void terminateStack(Long stackId, CloudPlatform cloudPlatform) {
         final Stack stack = stackRepository.findOneWithLists(stackId);
         try {
@@ -57,16 +61,7 @@ public class TerminationService {
         try {
             Date now = new Date();
             String terminatedName = stack.getName() + DELIMITER + now.getTime();
-            Cluster cluster = stack.getCluster();
-            if (cluster != null) {
-                cluster.setName(terminatedName);
-                cluster.setBlueprint(null);
-                clusterRepository.save(cluster);
-                for (HostGroup hostGroup : hostGroupRepository.findHostGroupsInCluster(cluster.getId())) {
-                    hostGroup.getRecipes().clear();
-                    hostGroupRepository.save(hostGroup);
-                }
-            }
+            terminateClusterAndItsResources(stack, terminatedName);
             stack.setCredential(null);
             stack.setNetwork(null);
             stack.setSecurityGroup(null);
@@ -76,6 +71,19 @@ public class TerminationService {
         } catch (Exception ex) {
             LOGGER.error("Failed to terminate cluster infrastructure. Stack id {}", stack.getId());
             throw new TerminationFailedException(ex);
+        }
+    }
+
+    private void terminateClusterAndItsResources(Stack stack, String terminatedName) {
+        Cluster cluster = stack.getCluster();
+        if (cluster != null) {
+            cluster.setName(terminatedName);
+            cluster.setBlueprint(null);
+            clusterRepository.save(cluster);
+            for (HostGroup hostGroup : hostGroupRepository.findHostGroupsInCluster(cluster.getId())) {
+                hostGroup.getRecipes().clear();
+                hostGroupRepository.save(hostGroup);
+            }
         }
     }
 
