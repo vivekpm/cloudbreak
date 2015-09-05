@@ -43,10 +43,29 @@ format_disks() {
         umount "$MOUNTPOINT"
         sed -i "\|^$DEVICE|d" /etc/fstab
       fi
-      mkfs -E lazy_itable_init=1 -O uninit_bg -F -t ext4 $DEVICE
-      mkdir /hadoopfs/fs${i}
-      echo $DEVICE /hadoopfs/fs${i} ext4  defaults,noatime 0 2 >> /etc/fstab
-      mount /hadoopfs/fs${i}
+      if [ $i -eq 1 ]; then
+      	pvcreate $DEVICE && \
+		vgcreate direct-lvm $DEVICE && \
+		lvcreate -n data direct-lvm -L 20G  && \
+		lvcreate -n metadata direct-lvm -L 10G  && \
+		lvcreate -n hadoop direct-lvm -l 100%FREE  && \
+		dd if=/dev/zero of=/dev/direct-lvm/metadata bs=1M count=10
+		mkfs -E lazy_itable_init=1 -O uninit_bg -F -t ext4 /dev/direct-lvm/hadoop
+        mkdir /hadoopfs/fs${i}
+        echo /dev/direct-lvm/hadoop /hadoopfs/fs${i} ext4  defaults,noatime 0 2 >> /etc/fstab
+        mount /hadoopfs/fs${i}
+        sed -i '/^ExecStart/ s/$/ --storage-opt dm.datadev=\/dev\/direct-lvm\/data --storage-opt dm.metadatadev=\/dev\/direct-lvm\/metadata --storage-opt dm.fs=xfs --storage-opt dm.blocksize=512K/' /usr/lib/systemd/system/docker.service
+        service docker stop
+        rm -rf /var/lib/docker
+        systemctl daemon-reload
+        service docker start
+        ls -1 /tmp/ | grep tar.gz | while read line; do echo "Import $line"; docker load -i /tmp/$line; done
+	  else
+	    mkfs -E lazy_itable_init=1 -O uninit_bg -F -t ext4 $DEVICE
+        mkdir /hadoopfs/fs${i}
+        echo $DEVICE /hadoopfs/fs${i} ext4  defaults,noatime 0 2 >> /etc/fstab
+        mount /hadoopfs/fs${i}
+      fi
     fi
   done
   cd /hadoopfs/fs1 && mkdir logs logs/ambari-server logs/ambari-agent logs/consul-watch logs/kerberos

@@ -68,7 +68,7 @@ public class EnvironmentVariableConfig {
             .append(String.format("JAPAN_WEST:https://sequenceiqjapanwest.blob.core.windows.net/images/%s,", CB_AZURE_RM_IMAGE_NAME))
             .append(String.format("SOUTHEAST_ASIA:https://sequenceiqsoutheastasia.blob.core.windows.net/images/%s,", CB_AZURE_RM_IMAGE_NAME))
             .append(String.format("WEST_US:https://sequenceiqwestus.blob.core.windows.net/images/%s,", CB_AZURE_RM_IMAGE_NAME))
-            .append(String.format("WEST_EUROPE:https://sequenceiqwesteurope.blob.core.windows.net/images/%s", CB_AZURE_RM_IMAGE_NAME))
+            .append(String.format("WEST_EUROPE:https://sequenceiqwesteurope.blob.core.windows.net/images/%s", "cb-centos71-amb210-2015-08-31-centos7_2015-August-31_14-48-os-2015-08-31.vhd"))
             .toString();
 
     public static final String CB_ARM_TEMPLATE_PATH = "templates/arm-v2.ftl";
