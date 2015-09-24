@@ -1,13 +1,17 @@
 package com.sequenceiq.cloudbreak.cloud.arm;
 
+import static com.sequenceiq.cloudbreak.EnvironmentVariableConfig.CB_ARM_CENTRAL_STORAGE;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.google.common.base.Strings;
 import com.sequenceiq.cloud.azure.client.AzureRMClient;
 import com.sequenceiq.cloudbreak.cloud.arm.status.ArmStackStatus;
 import com.sequenceiq.cloudbreak.cloud.event.context.CloudContext;
@@ -20,11 +24,16 @@ import com.sequenceiq.cloudbreak.domain.ResourceType;
 import groovyx.net.http.HttpResponseException;
 
 @Component
-public class ArmTemplateUtils {
+public class ArmUtils {
 
     public static final int NOT_FOUND = 404;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ArmTemplateUtils.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ArmUtils.class);
+
+    private static final int MAX_LENGTH_OF_RESOURCE_NAME = 24;
+
+    @Value("${cb.arm.persistent.storage:" + CB_ARM_CENTRAL_STORAGE + "}")
+    private String persistentStorage;
 
     public CloudResource getTemplateResource(List<CloudResource> resourceList) {
         for (CloudResource resource : resourceList) {
@@ -79,5 +88,38 @@ public class ArmTemplateUtils {
         }
         return armResourceStatus;
     }
+
+    public boolean isPersistentStorage() {
+        return !Strings.isNullOrEmpty(persistentStorage);
+    }
+
+    public String getImageResourceGroupName(CloudContext cloudContext) {
+        if (isPersistentStorage()) {
+            return persistentStorage;
+        }
+        return getResourceGroupName(cloudContext);
+    }
+
+    public String getResourceGroupName(CloudContext cloudContext) {
+        return getStackName(cloudContext);
+    }
+
+    public String getStorageName(CloudContext cloudContext, String region) {
+        String result;
+        if (isPersistentStorage()) {
+            result = String.format("%s%s", persistentStorage, region.toLowerCase().replaceAll("\\s+|_", ""));
+        } else {
+            result = cloudContext.getStackName().toLowerCase().replaceAll("\\s+|-", "") + cloudContext.getStackId() + cloudContext.getCreated();
+        }
+        if (result.length() > MAX_LENGTH_OF_RESOURCE_NAME) {
+            return result.substring(result.length() - MAX_LENGTH_OF_RESOURCE_NAME, result.length());
+        }
+        return result;
+    }
+
+    public String getDiskContainerName(CloudContext cloudContext) {
+        return getStackName(cloudContext);
+    }
+
 
 }
